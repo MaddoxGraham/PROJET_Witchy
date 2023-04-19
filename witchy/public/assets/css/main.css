@@ -288,9 +288,7 @@ button {
 }
 
 .fa-caret-down {
-  font-size: 32px;
-  margin-top: auto;
-  margin-bottom: auto;
+  display: none;
 }
 
 .subClass {
@@ -1899,7 +1897,9 @@ display: block;
     left: 0;
   }
 
-
+  .fa-caret-down{
+    display: none !important;
+  }
 }
 
 
