@@ -39,8 +39,16 @@ class CatalogueController extends AbstractController
             // Ajouter des données pour les autres siblings ici...
         );
 
-        return $this->render('catalogue/index.html.twig', [
-            'categories' => $categorieRepository->findBy([],['id' => 'asc']),
+        return $this->render('_partials/_head.html.twig', [
+            'surCategories' => $categorieRepository->findBy(['parent' => null]),
+            'SubCategories' => $categorieRepository->createQueryBuilder('c')
+            ->where('c.parent IS NOT NULL')
+            ->getQuery()
+            ->getResult(),
+        
+          
+
+           
             'siblingsData' => $siblingsData
         ]);
     }

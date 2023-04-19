@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Entity\Categorie;
 use App\Entity\Produit;
 use App\Repository\ProduitRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -24,4 +25,5 @@ class ProductsController extends AbstractController{
         $categoriesProduit = $produitRepository->findBy(['categorie' => $produit->getCategorie()]);
     return $this->render('products/details.html.twig', compact('produit', 'categoriesProduit'));
     }
+
 }
