@@ -21,4 +21,14 @@ class HeaderController extends AbstractController
             ->getResult(),
         ]);
     }
+
+    #[Route('{slug}', name: 'categorieProducts')]
+    public function header(CategorieRepository $categorieRepository): Response
+    {
+        $categories = $categorieRepository->findAll();
+        return $this->render('products/sousCategorie.html.twig', [
+            'categories' => $categories,
+            
+        ]);
+    }
 }

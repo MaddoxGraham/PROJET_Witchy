@@ -39,19 +39,26 @@ class ProductsController extends AbstractController{
     return $this->render('products/details.html.twig', compact('produit', 'categoriesProduit', 'surCategories', 'SubCategories'));
     }
 
-    #[Route('/{categorieSlug}/{subcategorieSlug}', name: 'categoriesProducts')]
-    public function categoriesProducts(string $categorieSlug, string $subcategorieSlug, ProduitRepository $produitRepository, CategorieRepository $categorieRepository): Response
-    {
-        $categorie = $categorieRepository->findOneBy(['slug' => $categorieSlug]);
-        $subcategorie = $categorieRepository->findOneBy(['slug' => $subcategorieSlug, 'parent' => $categorie->getId()]);
-        $produits = $produitRepository->findBySouscategorie($subcategorie);
+    // public function sousCategorie($slug)
+    // {
+    //     // récupérer la sous-catégorie correspondante au slug
+    //     $sousCategorie = $this->getDoctrine()->getRepository(SousCategorie::class)->findOneBy(['slug' => $slug]);
     
-        return $this->render('products/categories.html.twig', [
-            'produits' => $produits,
-            'categorie' => $categorie,
-            'subcategorie' => $subcategorie,
-        ]);
-    }
+    //     // vérifier si la sous-catégorie existe
+    //     if (!$sousCategorie) {
+    //         throw $this->createNotFoundException('La sous-catégorie n\'existe pas');
+    //     }
+    
+    //     // récupérer tous les produits de la sous-catégorie
+    //     $produits = $this->getDoctrine()->getRepository(Produit::class)->findBy(['sousCategorie' => $sousCategorie]);
+    
+    //     // afficher la page de la sous-catégorie avec les produits correspondants
+    //     return $this->render('products/sousCategorie.html.twig', [
+    //         'produits' => $produits,
+    //         'sousCategorie' => $sousCategorie
+    //     ]);
+    // }
+    
 
 
 }
