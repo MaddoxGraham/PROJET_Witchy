@@ -245,12 +245,12 @@
                 <div class="card" data-images="{{ produit.photos|map(p => p.src)|join(',') }}">
                     {% set primaryPhoto = produit.photos|filter(p => p.isPrimary is not null and p.isPrimary)|first %}
                     <div class="parentRelatif cardImgSeller">
-                        <a href="{{ path('products', {'slug': produit.slug}) }}">
+                        <a href="{{ path('app_products_details', {'slug': produit.slug}) }}">
                             <img src="{{ primaryPhoto.src }}" alt="{{ produit.shortLibel }}" class="card-img-top img-fluid">
                         </a>
                         <button type="button" class="card-text LargeFont">Add to cauldron</button>
                         {% if produit.photos|length > 1 %}
-                            {% set secondaryPhotos = produit.photos|filter(p => p.isPrimary is null) %}
+	                     {% set secondaryPhotos = produit.photos|filter(p => p.isPrimary is null) %}
                             {% for photo in secondaryPhotos %}
                                 <div class="secondary-photo" style="display: none;">
                                     <img src="{{ photo.src }}" alt="{{ produit.shortLibel }}" class="card-img-top img-fluid">

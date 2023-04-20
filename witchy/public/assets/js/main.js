@@ -28,28 +28,31 @@ for (let index = 0; index < catBtn.length; index++) {
 
 
 }
-document.addEventListener('DOMContentLoaded', function() {
-    var cards = document.querySelectorAll('.card');
-    cards.forEach(function(card) {
-      var images = card.dataset.images.split(',');
-      var primaryPhoto = card.querySelector('img');
-      var index = 0;
-  
-      if (images.length <= 1) {
-        return;
-      }
-  
-      card.addEventListener('mouseover', function() {
-        if (index < images.length - 1) {
-          index++;
-        } else {
-          index = 0;
-        }
-        primaryPhoto.src = images[index];
-      });
-  
-      card.addEventListener('mouseleave', function() {
-        primaryPhoto.src = images[0];
-      });
+const cards = document.querySelectorAll('.card');
+
+cards.forEach(card => {
+  const imagePaths = card.dataset.images;
+  if (imagePaths) {
+    const paths = imagePaths.split(',');
+    const img = card.querySelector('img');
+
+    // Précharger les images secondaires
+    paths.forEach(path => {
+      const img = new Image();
+      img.src = path;
     });
-  });
+
+    // Basculer entre les images
+    card.addEventListener('mouseover', () => {
+      if (paths.length > 1) {
+        const index = Math.floor(Math.random() * paths.length);
+        img.src = paths[index];
+      }
+    });
+
+    // Revenir à l'image principale
+    card.addEventListener('mouseout', () => {
+      img.src = paths[0];
+    });
+  }
+});

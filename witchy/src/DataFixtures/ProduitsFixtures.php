@@ -177,7 +177,7 @@ $manager);
 $produit = $this->createProduct(' VRTB-02- Hoodie jaune',
 'Oversized sweet jaune. Tissu de l\'univers VRTB-02 Sweat à capuche jaune.60% coton 40% polyester. 10 onces d\'épaisseur.',
 140.53,
-10,
+12,
 [
 'https://img.staticdj.com/ed322116ff010b8f824d2ac836bc79a8_1080x.jpeg',
 'https://img.staticdj.com/735552b77a5eb6c7b5380e615f508ffd_1080x.jpeg',
@@ -236,9 +236,10 @@ $produit = $this->createProduct(' Fairywalker Platform Sneakers ',
 13,
 [
 'https://cdn.shopify.com/s/files/1/0634/6335/8721/products/1adwwd9smHoevIJIHW8J1V6INPMWn35I.jpg?v=1681497639',
-'https://cdn.shopify.com/s/files/1/0634/6335/8721/products/TNbaBxFZarfkGxgvIDBjNFVSofpBHTyr.jpg?v=1681497624',
 'https://cdn.shopify.com/s/files/1/0634/6335/8721/products/ybrKSAg6vbPs7qlynUId7DwnewcQD1Ep.jpg?v=1681497632',
-'https://cdn.shopify.com/s/files/1/0634/6335/8721/products/TNbaBxFZarfkGxgvIDBjNFVSofpBHTyr-24_6647bf69-a8cd-4f66-9715-71df4a4f843d.jpg?v=1675790075'
+'https://cdn.shopify.com/s/files/1/0634/6335/8721/products/TNbaBxFZarfkGxgvIDBjNFVSofpBHTyr.jpg?v=1681497624',
+'https://cdn.shopify.com/s/files/1/0634/6335/8721/products/0Jj7xIF7Nf7TBUl8PDhr30eFYv03P83l.jpg?v=1681497635',
+'https://cdn.shopify.com/s/files/1/0634/6335/8721/products/IG3MTqjUxcmBJOG1sopVBHoKViJYRNNf.jpg?v=1681497628'
 ],
 $manager);
 
@@ -255,6 +256,21 @@ $produit = $this->createProduct(' Neon Jawbreaker Traitor Boots ',
 ],
 $manager);
 
+$produit = $this->createProduct(' Hold Me Tight Platform Heels ',
+'Sugar Thrillz Hold Me Tight Platform Heels never let me go! Float away in these platform heels that have a patent vegan leather construction, 3D heart-shaped balloon appliques all over, teddy bear embroidered patches at sides, sparkling rhinestones and star details, and adjustable ankle strap',
+166.95,
+14,
+[
+'https://cdn.shopify.com/s/files/1/0634/6335/8721/products/wi2ZnM8Gqyc18A97JoKqw7wzgvjhjoun-24.jpg?v=1657912738',
+'https://cdn.shopify.com/s/files/1/0634/6335/8721/products/OQBExJGhkeF4dTnnzqtbO2GxqzqlIBib-24.jpg?v=1657912738',
+'https://cdn.shopify.com/s/files/1/0634/6335/8721/products/73pCqyu0SaRqXbJ2gcAJkPGK0KOFh5sw-24.jpg?v=1657912738',
+'https://cdn.shopify.com/s/files/1/0634/6335/8721/products/TLa1OLZJK9l5uDOEk3PmRIX2rZGeeu08-24.jpg?v=1657912738',
+'https://cdn.shopify.com/s/files/1/0634/6335/8721/products/LONVfS1g8SzHJhaw9oqmvbo9Pcbmiyxo-24.jpg?v=1657912738'
+],
+$manager);
+
+
+
 $produit = $this->createProduct(' Holy Revelation Platform Heels - Mint ',
 'These platform heels have a crushed velvet construction, pearl beaded details all over with heart and cross charms, and adjustable velcro strap closures at the ankles.',
 90.95,
@@ -266,6 +282,279 @@ $produit = $this->createProduct(' Holy Revelation Platform Heels - Mint ',
 'https://cdn.shopify.com/s/files/1/0634/6335/8721/products/MlPhFlN7xGRhhADnuiIr834SQrg5YdSy-24.jpg?v=1678309302'
 ],
 $manager);
+
+$produit = $this->createProduct('Gentle Encouragement Plush Crossbody Bag',
+'Dolls Kill x Care Bears Gentle Encouragement Plush Crossbody Bag get by with a little help from your friends! This Cheer Bear crossbody bag has a plush faux fur construction, a rainbow embroidered at front, a back zip closure, a branded heart detail at back, and adjustable and detachable straps to also wear it as a backpack.',
+50.90,
+17,
+[
+'https://cdn.shopify.com/s/files/1/0634/6335/8721/products/GaKu9FcD37pckOeQsomf6JcfOIyhF984-24.jpg?v=1676496310',
+'https://cdn.shopify.com/s/files/1/0634/6335/8721/products/tBrOCaopTqFlUOUf0umMOfSWNffr0eHa-24.jpg?v=1676506746',
+'https://cdn.shopify.com/s/files/1/0634/6335/8721/products/IiQyQYpwAZXzmH3q9tgENIDaVe4wQ4Do-24.jpg?v=1676496310',
+'https://cdn.shopify.com/s/files/1/0634/6335/8721/products/EXLoU9DBoymlb3yrOVrjFwOWOIqwfQOC-24.jpg?v=1676496310',
+'https://cdn.shopify.com/s/files/1/0634/6335/8721/products/8SW0GIhtRCeuVNCsruIY7c2U6FQdxbuW-24.jpg?v=1676496310'
+],
+$manager);
+
+$produit = $this->createProduct(' Sour Fuck Boys Bag ',
+'Current Mood Sour Fuck Boys Bag cuz the crew\'s all here for ya, so let\'s eat \'em alive! This shoulder bag has a patent vegan leather construction with a candy bag inspired shape, top zip closure, little gummy dude graphics all over, graphic lettering on the front and back, and a wo',
+50.95,
+17,
+[
+'https://cdn.shopify.com/s/files/1/0634/6335/8721/products/gaOGxYkyK0JvbjcYkhD6zuOqHljWjc4F-24.jpg?v=1675366809',
+'https://cdn.shopify.com/s/files/1/0634/6335/8721/products/ILRm2upzRe7Gn8PF5bdV2WUDvtDLQxK3-24.jpg?v=1675366810',
+'https://cdn.shopify.com/s/files/1/0634/6335/8721/products/H4OQd8IFacuHpEz7y4cko09GH6gnDdfs-24_e235c700-2d6c-45c6-a385-21c8f71d3ddc.jpg?v=1675366810',
+'https://cdn.shopify.com/s/files/1/0634/6335/8721/products/fboy.jpg?v=1679430396',
+'https://cdn.shopify.com/s/files/1/0634/6335/8721/products/pIVtoqwulogt88fxTfRWtwsTbAIpBic5-24.jpg?v=1675366810',
+'https://cdn.shopify.com/s/files/1/0634/6335/8721/products/fboy3.jpg?v=1679430397',
+'https://cdn.shopify.com/s/files/1/0634/6335/8721/products/eOLWrNRpcwiIMUf344Ze89ZforoXrgW0-24_a089e0a6-ce13-4120-b40d-0def8b17fbac.jpg?v=1675366810',
+'https://cdn.shopify.com/s/files/1/0634/6335/8721/products/fboy4.jpg?v=1679430396'
+],
+$manager);
+
+$produit = $this->createProduct(' Powerpuff Hotline Crossbody Bag ',
+'Dolls Kill x The Powerpuff Girls Powerpuff Hotline Crossbody Bag trouble is calling! Channel your inner Powerpuff with this telephone bag that comes in a glittery vegan leather construction, face graphic details, a thought bubble keychain zip closure, and a 3.5mm headphone jack to plug into your phone. An adapter can be used for phones with different sized headphone jacks.',
+76.95 ,
+17,
+[
+'https://cdn.shopify.com/s/files/1/0634/6335/8721/products/anHOgsmoKStPNHerMTvDC0C117fIluiO-24.jpg?v=1655141159',
+'https://cdn.shopify.com/s/files/1/0634/6335/8721/products/6LpAvG9aDIHkTiibr2OksMWPuiAou7fW-24.jpg?v=1655141159',
+'https://cdn.shopify.com/s/files/1/0634/6335/8721/products/Suq6DwKHaJr7zYkcg4wZmrmNp5wHU3cV-24_50fb873c-d903-4e35-8088-87a11258b0c7.jpg?v=1655227199'
+],
+$manager);
+
+$produit = $this->createProduct('KRMLN Type -Genesis 1- Veste coupe-vent imperméable Cyberpunk ',
+'Les tailles sont mesurées en cm et non en pouces, veuillez mesurer soigneusement
+Avant de passer une commande, assurez-vous d\'utiliser notre tableau des tailles pour mesurer, n\'utilisez pas votre tableau des tailles habituel ou un autre tableau des tailles de marque !
+
+
+Détails du produit:
+- Matière Taslan JN Polyester
+- Coupe-vent et résistant à l\'eau
+- 3 poches extérieures et 1 poche intérieure
+-Conception unisexe
+ ',
+137.43,
+12,
+[
+  'https://i.etsystatic.com/35365753/r/il/64d6ff/3876613934/il_1140xN.3876613934_86fo.jpg',
+'https://i.etsystatic.com/35365753/r/il/6270f9/3876613930/il_1140xN.3876613930_beix.jpg',
+'https://i.etsystatic.com/35365753/r/il/111598/3876613924/il_1140xN.3876613924_g16d.jpg',
+'https://i.etsystatic.com/35365753/r/il/b4376d/3876613922/il_1140xN.3876613922_cds1.jpg',
+'https://i.etsystatic.com/35365753/r/il/60ad2a/4320217855/il_1140xN.4320217855_e6er.jpg',
+'https://i.etsystatic.com/iap/5e8332/4744465705/iap_300x300.4744465705_oh9gr0oo.jpg?version=0'
+],
+$manager);
+
+$produit = $this->createProduct('Necro cyber call bodysuit Armor',
+'Club Exx Defy Gravity Holographic Bodysuit make like space and let go! This bodysuit has a stretchy construction with disco ball-inspired holographic detailing, fixed shoulder straps, side cutouts, and a back zip closure with an O-ring pull and ribbons. ',
+109.74,
+9,
+[
+'https://i.etsystatic.com/12822214/r/il/a1b2cd/4277228429/il_1140xN.4277228429_1jbx.jpg',
+'https://i.etsystatic.com/12822214/r/il/3e4697/4277232473/il_1140xN.4277232473_24n4.jpg',
+'https://i.etsystatic.com/12822214/r/il/178691/4277228437/il_1140xN.4277228437_h1cv.jpg',
+'https://i.etsystatic.com/12822214/r/il/484754/4277228445/il_1140xN.4277228445_9h3l.jpg',
+'https://i.etsystatic.com/12822214/r/il/05af42/4229572450/il_1140xN.4229572450_njmy.jpg'
+],
+$manager);
+
+$produit = $this->createProduct(' Aqua Great Unknown Metallic Bodysuit ',
+'Club Exx Aqua Great Unknown Metallic Bodysuit gotcha traveling to undiscovered dimensions. This halter bodysuit has a stretchy metallic construction, a plunging neckline with criss cross accents, a cheeky bottom, and adjustable back tie closures.',
+109.74,
+9,
+[
+'https://i.etsystatic.com/12822214/r/il/e58d54/3396300923/il_1140xN.3396300923_a3md.jpg',
+'https://i.etsystatic.com/12822214/r/il/45b9f8/3396301317/il_1140xN.3396301317_r6gl.jpg',
+'https://i.etsystatic.com/12822214/r/il/1ec2c0/3348603848/il_1140xN.3348603848_erd4.jpg',
+'https://i.etsystatic.com/12822214/r/il/f99ad8/3348603842/il_1140xN.3348603842_insn.jpg',
+'https://i.etsystatic.com/12822214/r/il/d5dc5c/3396300927/il_1140xN.3396300927_4wub.jpg'
+],
+$manager);
+
+$produit = $this->createProduct(' Dream Crusher Clear Skirt ',
+'Club Exx Dream Crusher Clear Skirt cuz you\'re breakin all the hearts and rules, babe! This clear holographic mini skirt has a structured PVC construction, a belted waistline with a high rise fit, and a side zip closure.',
+53.40,
+8,
+[
+'https://cdn.shopify.com/s/files/1/0634/6335/8721/products/Yg0pr9iTnTaqtShXBmJ590H2aRbaOBCW-24.jpg?v=1649434470',
+'https://cdn.shopify.com/s/files/1/0634/6335/8721/products/zIekLbIa4eNwMv4MNhQOI46ybd346YVE-24.jpg?v=1649434470',
+'https://cdn.shopify.com/s/files/1/0634/6335/8721/products/SeQVUNJ32VB8Vg8Hm3FPAyB0BZzgj7ky-24.jpg?v=1649434470',
+'https://cdn.shopify.com/s/files/1/0634/6335/8721/products/Br0YSO1U9XEHjL1eucvlGixrsVCfJrct-24.jpg?v=1649434470'
+],
+$manager);
+
+$produit = $this->createProduct(' Rainbow Mini Skirt ',
+'NGOrder Rainbow Mini Skirt cuz you\'re a glass half full kinda girl. This mini skirt comes with a high waist, stretch fit, and a sky and rainbow print.',
+50.95,
+8,
+[
+'https://cdn.shopify.com/s/files/1/0634/6335/8721/products/ToAvAxoxZkw6MBfYTgjWe4hIeRuBjAE2-24.jpg?v=1654715172',
+'https://cdn.shopify.com/s/files/1/0634/6335/8721/products/Q9tsGBlwYqVCFm8d7VE5pRbPnGYEsxq4-24.jpg?v=1654715172',
+'https://cdn.shopify.com/s/files/1/0634/6335/8721/products/O0OpxYLhJk5hRXepOkDT0q4Ie4naswSu-24.jpg?v=1654715172',
+'https://cdn.shopify.com/s/files/1/0634/6335/8721/products/ZkZ1fRsGDllnJtgOeloErV6O3eBogQaF-24.jpg?v=1654715172'
+],
+$manager);
+
+$produit = $this->createProduct(' Lavender Siren Calling Metallic Flares ',
+'Club Exx Lavender Siren Calling Metallic Flares gotcha feelin\' like a mystical mermaid! Dive into the magic with these metallic shimmer flare pants that have a low rise fit, ruched seams on the front and back, and a V-cut waistband with tie strap details.',
+76.95,
+8,
+[
+'https://cdn.shopify.com/s/files/1/0634/6335/8721/products/m6ePJDtiPZsl8bMA1Cs3XX61n3hfw700-24.jpg?v=1676419713',
+'https://cdn.shopify.com/s/files/1/0634/6335/8721/products/Wsw7Q7k1cguNuOgTVfVDij0C3B7opKPx-24.jpg?v=1676419713',
+'https://cdn.shopify.com/s/files/1/0634/6335/8721/products/0WgXEGZ81FbZo58XCEcRQ9kRwcBwDmaA-24.jpg?v=1677268172',
+'https://cdn.shopify.com/s/files/1/0634/6335/8721/products/RhLKqV71dqvWfRHbJO2F7cefmsJ6Ya6L-24.jpg?v=1676419713',
+'https://cdn.shopify.com/s/files/1/0634/6335/8721/products/oq91orvHXapOFXC9SC4vp5TGZstFb5av-24.jpg?v=1676419713'
+],
+$manager);
+
+
+$produit = $this->createProduct(' Stardust Showdown Strappy Flares - Neon Green ',
+'Club Exx Stardust Showdown Strappy Flares - Neon Green cuz you\'re a glittering goddess! These bell bottom pants have a sheer mesh construction, a built-in cheeky panty, a strappy cutout waist, and sparkly rhinestones all over.',
+84.95,
+8,
+[
+'https://cdn.shopify.com/s/files/1/0634/6335/8721/products/ODWBh0JGf8LyBARMx2mORbl75PBLGI3d-24.jpg?v=1678748701',
+'https://cdn.shopify.com/s/files/1/0634/6335/8721/products/SOJhpsxRGt2pTza6n8IKY5233oLrP1WY-24.jpg?v=1678748701',
+'https://cdn.shopify.com/s/files/1/0634/6335/8721/products/4xC1iWQnOYFWqvF795CgIyYfHhb6g6SC-24.jpg?v=1678748701',
+'https://cdn.shopify.com/s/files/1/0634/6335/8721/products/rX6srXgwStTZABwoiieQGetoZU2OhFQl-24.jpg?v=1678748701',
+'https://cdn.shopify.com/s/files/1/0634/6335/8721/products/pML8wislhn4jM36wQ5fiZqxLZfDbJkko-24.jpg?v=1678748701'
+],
+$manager);
+
+$produit = $this->createProduct(' Sweet Star Child Cut-Out Pants ',
+'Club Exx Sweet Star Child Cut-Out Pants cuz you\'re a show off. These pants have a super stretchy material, cut-out designs on the sides, and a slightly flared silhouette.',
+65.25,
+8,
+[
+'https://cdn.shopify.com/s/files/1/0634/6335/8721/products/4mZEc35ldmbNAFSuYsJoLojT5H4dL0eW-24.jpg?v=1676419701',
+'https://cdn.shopify.com/s/files/1/0634/6335/8721/products/VfiQ8XIJLcrM6h4de8PrOEQpBzdbznKY-24.jpg?v=1676419701',
+'https://cdn.shopify.com/s/files/1/0634/6335/8721/products/xIpQTjuPXbEAqKAFjWOIlXlGIlDj2eep-24.jpg?v=1676419701',
+'https://cdn.shopify.com/s/files/1/0634/6335/8721/products/gvJglBcw2ScpJndgBrrTDhS46Cjn8J6F-24.jpg?v=1676419701',
+'https://cdn.shopify.com/s/files/1/0634/6335/8721/products/SNYoLSJJX7xWn5oqJX4zQSUAefXQqBQA-24.jpg?v=1676419701'
+],
+$manager);
+
+$produit = $this->createProduct(' Space Diva Mini Skirt ',
+'Club Exx Space Diva Mini Skirt cuz you\'re the planetary princess! This flared mini skirt has a ponte knit construction with mirrored metallic panels all over, a back zip closure, and a high waist fit.',
+61.95,
+8,
+[
+'https://cdn.shopify.com/s/files/1/0634/6335/8721/products/m0tagI67roIZeivIGltasfRh8hJlcgDY-24.jpg?v=1678748767',
+'https://cdn.shopify.com/s/files/1/0634/6335/8721/products/X3RTyoEgOd9Rbxt8qUe73ypI5PDyEPWC-24.jpg?v=1678748767',
+'https://cdn.shopify.com/s/files/1/0634/6335/8721/products/6FL9WXOs4Bd7pjayyRdVGe3zW5qvYHUg-24.jpg?v=1678748767',
+'https://cdn.shopify.com/s/files/1/0634/6335/8721/products/w225bHmT6OwT3vAVIulwdLsMI9JE0ITP-24.jpg?v=1678748767',
+'https://cdn.shopify.com/s/files/1/0634/6335/8721/products/MDDkJCorMuFydOoOIKrGGM5fbdqg2pqp-24.jpg?v=1678748767'
+],
+$manager);
+
+
+$produit = $this->createProduct(' Fairy Type Holographic Skort - Lime ',
+'Club Exx Fairy Type Holographic Skort - Lime will have you spreading the magic, babe! This holographic circle skort has a high waist fit and a cheeky shorts liner underneath.',
+39.95,
+8,
+[
+'https://cdn.shopify.com/s/files/1/0634/6335/8721/products/mF23HmlAj72ZMk3cPGzX1tU7cVTGKMT5-24.jpg?v=1678748642',
+'https://cdn.shopify.com/s/files/1/0634/6335/8721/products/GOzEKZ7yRNlAbFdIS4nmTGqZCCtoLMZn-24.jpg?v=1678748642',
+'https://cdn.shopify.com/s/files/1/0634/6335/8721/products/LoGXrYOx5WPNxQT8wS5USYDZjcNv4Jsj-24_c17914c5-cf82-4357-ad3c-ccf0618bc10a.jpg?v=1678748642',
+'https://cdn.shopify.com/s/files/1/0634/6335/8721/products/3ulB7dJAW70urAQp7ZBExRUpGt8iwGpL-24.jpg?v=1678748642',
+'https://cdn.shopify.com/s/files/1/0634/6335/8721/products/DseVLyuxCbr4kcu9M1ah0U7wtnitvQsq-24.jpg?v=1678748642'
+],
+$manager);
+
+$produit = $this->createProduct('Lunettes Cyberpunk',
+'Lunettes Cyberpunk Futuristes,Unisexe, taille unique.Matériau en résine respectueux de l\'environnement, inoffensif pour le corps humain, sûr et fiable.Lunettes Cyberpunk avec un sens de la technologie futuriste.',
+16.34,
+20,
+[
+'https://i.etsystatic.com/37015906/r/il/96d34a/4277093169/il_1140xN.4277093169_2zs8.jpg',
+'https://i.etsystatic.com/37015906/r/il/07d3e3/4229435284/il_1140xN.4229435284_o87f.jpg',
+'https://i.etsystatic.com/37015906/r/il/a7f0ae/4229435086/il_1140xN.4229435086_ii6e.jpg',
+'https://i.etsystatic.com/37015906/r/il/8c374f/4277093087/il_1140xN.4277093087_ird1.jpg',
+'https://i.etsystatic.com/37015906/r/il/102b5f/4229435130/il_1140xN.4229435130_753y.jpg',
+'https://i.etsystatic.com/37015906/r/il/12edfd/4277093161/il_1140xN.4277093161_m77a.jpg'
+],
+$manager);
+
+$produit = $this->createProduct('See Beyond the Futur',
+'Finitions fluides extraterrestres, boucles d\'oreilles gothiques cyberpunk, style y2k, unisexe haut de gamme. Matière : Acier 316L,Mixes,Taille : Finition : 195*70mm, Chaîne de réglage des deux côtés : 170mm,Couleur : argent, Style : accessoires pour le nez, accessoires pour les lèvres ',
+0.00,
+20,
+[
+'https://i.etsystatic.com/37015906/r/il/5d4c02/4352291547/il_1140xN.4352291547_mlxk.jpg',
+'https://i.etsystatic.com/37015906/r/il/dd0e80/4352290517/il_1140xN.4352290517_aqkb.jpg',
+'https://i.etsystatic.com/37015906/r/il/aaf07f/4352289631/il_1140xN.4352289631_miac.jpg',
+'https://i.etsystatic.com/37015906/r/il/6e7c3c/4304899706/il_1140xN.4304899706_tbtg.jpg',
+'https://i.etsystatic.com/37015906/r/il/5e70c3/4352290541/il_1140xN.4352290541_r8zc.jpg'
+],
+$manager);
+
+
+$produit = $this->createProduct('',
+'Ce produit est fait à la main, ce que vous voyez est ce que vous obtenez.Remarque : les accessoires pour le cou sont des fournitures de prise de vue et n\'incluent pas les accessoires pour le cou.La bande élastique du masque est réglable. Les groupes de lumière des deux côtés ont des batteries rechargeables intégrées (deux câbles de charge sont inclus avec le masque, assurez-vous d\'utiliser des têtes de charge 5v1a ou 2a), qui peuvent être tournées vers l\'avant et vers l\'arrière, détachables, appuyez longuement pour allumer la lumière , appuyez brièvement pour changer l\'effet de lumière, il y a toujours allumé, flux, flux clignotant, clignotant quatre modes. La lumière unique inférieure utilise une pile bouton commune, appuyez pour allumer la lumière directement et appuyez brièvement pour changer l\'effet lumineux. Les parties mécaniques du bras des deux côtés sont mobiles et détachables, et la forme peut être définie selon vos propres préférences.',
+122.55,
+22,
+[
+'https://i.etsystatic.com/37015906/r/il/26ded2/4265458150/il_1140xN.4265458150_ifri.jpg',
+'https://i.etsystatic.com/37015906/r/il/e61af5/4312856881/il_1140xN.4312856881_jtdr.jpg',
+'https://i.etsystatic.com/37015906/r/il/aa75eb/4265460602/il_1140xN.4265460602_nn0g.jpg',
+'https://i.etsystatic.com/37015906/r/il/973fc3/4265460868/il_1140xN.4265460868_acyk.jpg',
+'https://i.etsystatic.com/37015906/r/il/37cf97/4265461524/il_1140xN.4265461524_tigl.jpg',
+'https://i.etsystatic.com/37015906/r/il/170333/4312855353/il_1140xN.4312855353_ivg8.jpg',
+'https://i.etsystatic.com/37015906/r/il/d5ff9e/4265459144/il_1140xN.4265459144_g3br.jpg',
+'https://i.etsystatic.com/37015906/r/il/501289/4312861627/il_1140xN.4312861627_dbs3.jpg'
+],
+$manager);
+
+$produit = $this->createProduct('Masque Cyberpunk Bluetooth ',
+'Avec l\'avènement de la nouvelle ère, le style cyberpunk balaie le monde et la future technologie viendra au monde. De plus en plus de cybermen se lèveront, et ils déclencheront la tendance du monde.
+🔧Fonction LED :
+1. Le système est livré avec 20 modèles statiques/22 modèles dynamiques
+2. Modèles manuels de bricolage
+3. Entrez votre texte personnalisé
+4. Suivez la musique, le mode rythme',
+158.73,
+22,
+[
+'https://i.etsystatic.com/40414581/r/il/de1478/4694786337/il_1140xN.4694786337_jt5w.jpg',
+'https://i.etsystatic.com/40414581/r/il/9192e6/4758141446/il_1140xN.4758141446_1p0k.jpg',
+'https://i.etsystatic.com/40414581/r/il/d41c39/4646532606/il_1140xN.4646532606_78hq.jpg',
+'https://i.etsystatic.com/40414581/r/il/660440/4694776901/il_1140xN.4694776901_nnyu.jpg',
+'https://i.etsystatic.com/40414581/r/il/b48177/4833474581/il_1140xN.4833474581_eam9.jpg',
+'https://i.etsystatic.com/40414581/r/il/67c1cd/4785208980/il_1140xN.4785208980_7q05.jpg'
+],
+$manager);
+
+// $produit = $this->createProduct('',
+// '',
+// 0.00,
+// 11,
+// [
+// '',
+// '',
+// '',
+// '',
+// '',
+// ''
+// ],
+// $manager);
+
+
+// $produit = $this->createProduct('',
+// '',
+// 0.00,
+// 11,
+// [
+// '',
+// '',
+// '',
+// '',
+// '',
+// ''
+// ],
+// $manager);
+
 
 // $produit = $this->createProduct('',
 // '',

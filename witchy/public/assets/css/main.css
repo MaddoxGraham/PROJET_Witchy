@@ -7,7 +7,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Bungee+Shade&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Bigelow+Rules&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Archivo:wght@500&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Exo:wght@900&display=swap');
 :root {
@@ -1900,6 +1900,12 @@ display: block;
   .fa-caret-down{
     display: none !important;
   }
+  .description{
+    font-size: 1.8vw !important;
+    padding-top: 5%;
+    }
+   
+
 }
 
 
@@ -1918,9 +1924,9 @@ display: block;
   top: 0;
   left: 0;
   right: 0;
-  z-index: -1; 
+  z-index: -1;  
   color: rgb(18, 255, 255);
-  transform: translate(-1px, -1px);
+ transform: translate(-1px, -1px);
 }
 .HolographicEffect h1:after {
   content: attr(data-text);
@@ -1947,6 +1953,7 @@ display: block;
   background: linear-gradient(to right, #66C2FF, #FF6EC7);
   box-shadow: 0 0 10px 0 #fff, 0 0 20px 0 #fff, 0 0 30px 0 #fff, 0 0 40px #66C2FF, 0 0 70px #66C2FF, 0 0 80px #66C2FF, inset 0 0 10px 0 rgba(255,255,255,.5);
   transition: all 0.4s ease;
+  margin-bottom: 15%;
 }
 
 .btn-AddToCauldron:hover{
@@ -2020,4 +2027,8 @@ display: block;
   -webkit-text-stroke: 0.01em #94a0b9;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+}
+.description{
+font-size: 3.8vw;
+margin-bottom: 1.5rem !important;
 }

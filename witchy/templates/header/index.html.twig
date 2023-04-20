@@ -140,9 +140,8 @@
         		{% set subCategorieFirstWord = subCategorieWords[0] %}
 
 						<li style="{{ value }}" class="nav-item border-light">
-							<a class="nav-link active subClass" aria-current="page" href="#" data-text="{{ subCategorieFirstWord }}">
-								{{SubCategorie.nomination}}
-							</a>
+<a class="nav-link active subClass" aria-current="page" href="{{ path('categoriesProducts', { categorieSlug: surCategorie.slug, souscategorieSlug: SubCategorie.slug }) }}" data-text="{{ subCategorieFirstWord }}">{{ SubCategorie.nomination }}</a>
+
 						</li>
 							{% endif %}
 								{% endfor %}

@@ -39,4 +39,19 @@ class ProductsController extends AbstractController{
     return $this->render('products/details.html.twig', compact('produit', 'categoriesProduit', 'surCategories', 'SubCategories'));
     }
 
+    #[Route('/{categorieSlug}/{subcategorieSlug}', name: 'categoriesProducts')]
+    public function categoriesProducts(string $categorieSlug, string $subcategorieSlug, ProduitRepository $produitRepository, CategorieRepository $categorieRepository): Response
+    {
+        $categorie = $categorieRepository->findOneBy(['slug' => $categorieSlug]);
+        $subcategorie = $categorieRepository->findOneBy(['slug' => $subcategorieSlug, 'parent' => $categorie->getId()]);
+        $produits = $produitRepository->findBySouscategorie($subcategorie);
+    
+        return $this->render('products/categories.html.twig', [
+            'produits' => $produits,
+            'categorie' => $categorie,
+            'subcategorie' => $subcategorie,
+        ]);
+    }
+
+
 }
