@@ -1,8 +1,5 @@
 {% extends 'base.html.twig' %}
-
 {% block body %}
-	{% include '_partials/_head.html.twig' %}
-
 	<div class="container  indexDemo">
 
 		<div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="true">
@@ -239,113 +236,35 @@
 
 	</div>
 
+
+
 	<div class="row bg-Ardoise">
 
-		<div class="col-lg-3 mb-5 col-md-6">
-			<div class="card">
-				<div class="parentRelatif cardImgSeller ">
-					<a href="http://">
-						<img src="https://img.ltwebstatic.com/images3_pi/2022/10/18/1666062772a8652467ad2ebfa7fd41879694c2ac3b_thumbnail_600x.webp" class="card-img-top" alt="..."></a>
-					<button type="button" class="card-text LargeFont">Add to cauldron</button>
-				</div>
-				<div class="card-body">
-					<div class="font-serif">
-						Academia Dark Academia Robe en tartan à bouton
-					</div>
-					<div>
-						57.99€
-					</div>
-				</div>
-			</div>
-		</div>
-
-		<div class="col-lg-3 mb-5 col-md-6">
-			<div class="card">
-				<div class="parentRelatif cardImgSeller">
-					<a href="http://">
-						<img src="https://cdn.shopify.com/s/files/1/0539/0722/6789/products/Elemental-Cats-Air-Plush-Toy-G_500x.jpg?v=1677587307" class="card-img-top" alt="..."></a>
-					<button type="button" class="card-text LargeFont">Add to cauldron</button>
-				</div>
-				<div class="card-body">
-					<div class="font-serif">
-						Element Cats: Air Plush Toy
-					</div>
-					<div>
-						39,95€
-					</div>
-				</div>
-			</div>
-
-		</div>
-
-		<div class="col-lg-3 mb-5 col-md-6">
-			<div class="card ">
-				<div class="parentRelatif cardImgSeller">
-					<a href="http://">
-						<img src="https://cdn.shopify.com/s/files/1/0083/1530/6048/products/BLP04CMRX.jpg?v=1620472700&width=1680" class="card-img-top" alt="..."></a>
-					<button type="button" class="card-text LargeFont">Add to cauldron</button>
-				</div>
-				<div class="card-body">
-					<div class="font-serif">
-						B.L.P-04/Pant
-					</div>
-					<div>
-						160,00€
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class="col-lg-3  mb-5 col-md-6">
-			<div class="card ">
-				<div class="parentRelatif cardImgSeller">
-					<a href="http://">
-						<img src="https://cdn.shopify.com/s/files/1/0539/0722/6789/products/PANIC-PLATFORM-SHOE-W-B_500x.jpg?v=1677236048 " class="card-img-top" alt="..."></a>
-					<button type="button" class="card-text LargeFont">Add to cauldron</button>
-				</div>
-				<div class="card-body">
-					<div class="font-serif">
-						Panic Plateform shoes
-					</div>
-					<div>
-						129,95€
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class="col-lg-3  mb-5 col-md-6">
-			<div class="card ">
-				<div class="parentRelatif cardImgSeller">
-					<a href="http://">
-						<img src="https://cdn.shopify.com/s/files/1/0083/1530/6048/products/BANNERHGB05YLW.jpg?v=1664952433&width=1680" class="card-img-top" alt="..."></a>
-					<button type="button" class="card-text LargeFont">Add to cauldron</button>
-				</div>
-				<div class="my-auto  card-body">
-					<div class=" my-auto  font-serif">
-						H-G-b-05/Yellow Oversized Hoodie
-					</div>
-					<div>
-						204,00€
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class="col-lg-3 mb-5 col-md-6">
-			<div class="card ">
-				<div class="parentRelatif cardImgSeller">
-					<a href="http://">
-						<img src="https://cdn.shopify.com/s/files/1/0539/0722/6789/products/OnALeashHarness-G_18546264-8ffe-4fee-b156-5f686e51127d_385x578_crop_center.jpg?v=1670842544" class="card-img-top" alt="..."></a>
-					<button type="button" class="card-text LargeFont">Add to cauldron</button>
-				</div>
-				<div class=" my-auto card-body">
-					<div class="font-serif">
-						On a Leash Harness
-					</div>
-					<div>
-						39,95€
-					</div>
-				</div>
-			</div>
-		</div>
+{% for produit in produits %}
+            <div class="col-lg-3 mb-5 col-md-6">
+                <div class="card" data-images="{{ produit.photos|map(p => p.src)|join(',') }}">
+                    {% set primaryPhoto = produit.photos|filter(p => p.isPrimary is not null and p.isPrimary)|first %}
+                    <div class="parentRelatif cardImgSeller">
+                        <a href="{{ path('products', {'slug': produit.slug}) }}">
+                            <img src="{{ primaryPhoto.src }}" alt="{{ produit.shortLibel }}" class="card-img-top img-fluid">
+                        </a>
+                        <button type="button" class="card-text LargeFont">Add to cauldron</button>
+                        {% if produit.photos|length > 1 %}
+                            {% set secondaryPhotos = produit.photos|filter(p => p.isPrimary is null) %}
+                            {% for photo in secondaryPhotos %}
+                                <div class="secondary-photo" style="display: none;">
+                                    <img src="{{ photo.src }}" alt="{{ produit.shortLibel }}" class="card-img-top img-fluid">
+                                </div>
+                            {% endfor %}
+                        {% endif %}
+                    </div>
+                    <div class="card-body">
+                        <div class="font-serif">{{ produit.shortLibel }}</div>
+                        <div>{{ produit.prxHt }} €</div>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
 
 
 	</div>
