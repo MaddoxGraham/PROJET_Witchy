@@ -491,7 +491,7 @@ $produit = $this->createProduct('See Beyond the Futur',
 $manager);
 
 
-$produit = $this->createProduct('',
+$produit = $this->createProduct('Masque Cyber coyotte - Led edition',
 'Ce produit est fait à la main, ce que vous voyez est ce que vous obtenez.Remarque : les accessoires pour le cou sont des fournitures de prise de vue et n\'incluent pas les accessoires pour le cou.La bande élastique du masque est réglable. Les groupes de lumière des deux côtés ont des batteries rechargeables intégrées (deux câbles de charge sont inclus avec le masque, assurez-vous d\'utiliser des têtes de charge 5v1a ou 2a), qui peuvent être tournées vers l\'avant et vers l\'arrière, détachables, appuyez longuement pour allumer la lumière , appuyez brièvement pour changer l\'effet de lumière, il y a toujours allumé, flux, flux clignotant, clignotant quatre modes. La lumière unique inférieure utilise une pile bouton commune, appuyez pour allumer la lumière directement et appuyez brièvement pour changer l\'effet lumineux. Les parties mécaniques du bras des deux côtés sont mobiles et détachables, et la forme peut être définie selon vos propres préférences.',
 122.55,
 22,
@@ -526,10 +526,174 @@ $produit = $this->createProduct('Masque Cyberpunk Bluetooth ',
 ],
 $manager);
 
+$produit = $this->createProduct('Swirly Sis Cutout O-Ring Bell Bottoms',
+'Get wavy, baby! Think of all the colorful memories u could make wearing our Swirly Sis Cutout O-Ring Bell Bottoms. They have a high-waist design, flared cut at the bottom with marabou accent, and a sickeningly sweet and trippy print.',
+39.95,
+8,
+[
+'https://cdn.shopify.com/s/files/1/0982/0722/products/Swirly_Sis_Cutout_O-Ring_Bell_Bottoms-Front.jpg?v=1681150648',
+'https://cdn.shopify.com/s/files/1/0982/0722/products/Swirly_Sis_Cutout_O-Ring_Bell_Bottoms-Side.jpg?v=1681150648',
+'https://cdn.shopify.com/s/files/1/0982/0722/products/Swirly_Sis_O-Ring_Top-Full_5f38df49-dbd7-4229-b5b9-1996d8824d21.jpg?v=1681150648',
+'https://cdn.shopify.com/s/files/1/0982/0722/products/Swirly_Sis_Cutout_O-Ring_Bell_Bottoms-Back.jpg?v=1681150648'
+],
+$manager);
+
+
+$produit = $this->createProduct('Swirly Sis O-Ring Top',
+'Get wavy, baby! Think of all the colorful memories u could make wearing our Swirly Sis O-Ring Top. It has a plunging neckline, strappy design, o-ring accents, and a sickeningly sweet and trippy print.',
+30.95,
+7,
+[
+'https://cdn.shopify.com/s/files/1/0982/0722/products/Swirly_Sis_O-Ring_Top-Front.jpg?v=1681150519',
+'https://cdn.shopify.com/s/files/1/0982/0722/products/Swirly_Sis_O-Ring_Top-Side.jpg?v=1681150519',
+'https://cdn.shopify.com/s/files/1/0982/0722/products/Swirly_Sis_O-Ring_Top-Full.jpg?v=1681150519',
+'https://cdn.shopify.com/s/files/1/0982/0722/products/Swirly_Sis_O-Ring_Top-Back.jpg?v=1681150519'
+],
+$manager);
+
+$produit = $this->createProduct('Melted Planet Long Sleeve Cutout Crop Top',
+'Be a stunner in our Melted Planet Long Sleeve Cutout Crop Top. It has a figure-flattering fit, slit accents, and a cropped cut. Laced with vivid hues and mesmerizing patterns, this multicolored print will dazzle, evoking blissful emotions among everyone u encounter. ',
+32.95,
+7,
+[
+'https://cdn.shopify.com/s/files/1/0982/0722/products/Melted_Planet_Long_Sleeve_Cutout_Crop_Top-Front.jpg?v=1681149774',
+'https://cdn.shopify.com/s/files/1/0982/0722/products/Melted_Planet_Long_Sleeve_Cutout_Crop_Top-Side.jpg?v=1681149774',
+'https://cdn.shopify.com/s/files/1/0982/0722/products/Melted_Planet_Cutout_Shorts-Full.jpg?v=1681149774',
+'https://cdn.shopify.com/s/files/1/0982/0722/products/Melted_Planet_Long_Sleeve_Cutout_Crop_Top-Back.jpg?v=1681149769'
+],
+$manager);
+
+$produit = $this->createProduct(' LED CROP FUR JACKET ',
+'The Kawaii-Gods truly are amazing as they have blessed us with this magical faux fur crop jacket! We are in love; and you will be too! 
+
+They feature a multitude off flashing or constant light up modes which can be changed at the push of a discreet button. The ultimate addition for anyone that loves faux fur and being the centre of attention wherever they go; plus they keep you super snug when it gets a bit chilly but you don’t wanna go home just yet',
+150.00,
+7,
+[
+'https://cdn.shopify.com/s/files/1/0805/2243/products/LED_Crop_Jacket_3_1800x1800.jpg?v=1631180110',
+'https://cdn.shopify.com/s/files/1/0805/2243/products/LED_Crop_Jacket_5_1800x1800.jpg?v=1631180111',
+'https://cdn.shopify.com/s/files/1/0805/2243/products/LED_Crop_Jacket_1_1800x1800.jpg?v=1631180110',
+'https://cdn.shopify.com/s/files/1/0805/2243/products/LED_Crop_Jacket_2_1800x1800.jpg?v=1631180110',
+'https://cdn.shopify.com/s/files/1/0805/2243/products/LED_Crop_Fur_Jacket_4_1800x1800.jpg?v=1631180110'
+],
+$manager);
+
+$produit = $this->createProduct('Diamond Doll Captain Hat',
+'This ain\'t your ordinary sailor hat, no, no, no! This hat is all bling-bling with sparkling diamonds that attract attention like a magnet! You\'ll shine like a shooting star on the dance floor! And it doesn\'t stop there, the quality of this hat is exceptional, it\'s made with premium materials that will last for years!',
+50.00,
+22,
+[
+'https://cdn.shopify.com/s/files/1/1195/0530/products/Rave_03_08-39.jpg?v=1678645606',
+'https://cdn.shopify.com/s/files/1/1195/0530/products/Rave_03_08-40.jpg?v=1678645606',
+'https://cdn.shopify.com/s/files/1/1195/0530/products/Rave_03_08-38.jpg?v=1678645606'
+],
+$manager);
+
+$produit = $this->createProduct(' Cosmical Roller Sneakers ',
+'Diane
+modifie ce text : 
+
+Heelys Cosmical Roller Sneakers let\'s roll! These sneakers have vegan leather uppers, low-profile wheels, adjustable lace-up ties, swirl print and glitter trim, and lightweight outsoles. ',
+67.59,
+15,
+[
+'https://cdn.shopify.com/s/files/1/0634/6335/8721/products/nmWlsR3N2UlRrkur0tGhmcd1Dd9DtynV-24.jpg?v=1672784076',
+'https://cdn.shopify.com/s/files/1/0634/6335/8721/products/tLyA3jkbkc90AZcMhqbbPXH6Kg0OfiHW-24.jpg?v=1672786463',
+'https://cdn.shopify.com/s/files/1/0634/6335/8721/products/ATa803PCjKZSnJTm0kl6zFewyumpgbrw-24.jpg?v=1672786458',
+'https://cdn.shopify.com/s/files/1/0634/6335/8721/products/6u9TdAB1NmY3DoqQAQFM61QHMaa5SIew-24.jpg?v=1672786463',
+'https://cdn.shopify.com/s/files/1/0634/6335/8721/products/wopvP8JVo4DWqvtv5n1xxjbrFBDsWQim-24.jpg?v=1672786458'
+],
+$manager);
+
+$produit = $this->createProduct(' Extra Cheese Plz Burger Sneakers ',
+'Current Mood Extra Cheese Plz Burger Sneakers cuz you\'re grade A babe! Keep it lean in these burger platform sneakers that have a vegan leather construction, beaded details on top, and lace-up closures.',
+109.00,
+15,
+[
+'https://cdn.shopify.com/s/files/1/0634/6335/8721/products/S254647_0050_23-03-30.jpg?v=1680305246',
+'https://cdn.shopify.com/s/files/1/0634/6335/8721/products/S254647_0051_23-03-30.jpg?v=1680305246',
+'https://cdn.shopify.com/s/files/1/0634/6335/8721/products/S254647_0049_23-03-30.jpg?v=1680305246',
+'https://cdn.shopify.com/s/files/1/0634/6335/8721/products/S254647_0048_23-03-30.jpg?v=1680305203'
+],
+$manager);
+
+$produit = $this->createProduct('Double Lower Harness Set',
+'Pictured in Black and Bubblegum Pink. Other colours may be available, please get in touch for customisation information.
+
+Standard sizing, if you are unsure, please feel free to get in touch with us before ordering and check, or select \'Custom\' and include waist, height, top of thigh and mid thigh circumference measurements as a note to seller when purchasing, or email us a completed Measurement Sheet.',
+280.00,
+18,
+[
+'https://cdn.shopify.com/s/files/1/1394/9933/products/LL6800x1182_8a0544fc-1c49-4c31-9077-5f125582a57f.jpg?v=1562778502',
+'https://cdn.shopify.com/s/files/1/1394/9933/products/bucklesrings-background.jpg?v=1562778502',
+'https://cdn.shopify.com/s/files/1/1394/9933/products/BeltedBuckleSide.jpg?v=1562778502',
+'https://cdn.shopify.com/s/files/1/1394/9933/products/LL5800x1182_ab7a31f6-614a-4b26-be0d-28427d1f305e.jpg?v=1562778502'
+],
+$manager);
+
+$produit = $this->createProduct(' Vegan Leather Chain Harness ',
+'Devil Fashion Vegan Leather Chain Harness features a vegan leather construction, an open front, a halter neckline with metallic studs, a belt at the waist, and chain details up the front.',
+67.99,
+18,
+[
+'https://cdn.shopify.com/s/files/1/0634/6335/8721/products/Lu6bhrZTuwEMoZusOR7PDsES9jJjJ170-24.jpg?v=1668235294',
+'https://cdn.shopify.com/s/files/1/0634/6335/8721/products/iexj07I4x2ceIarCgzwNv75uMjezn4nm-24.jpg?v=1668235294',
+'https://cdn.shopify.com/s/files/1/0634/6335/8721/products/2WGj90OuJqBeo6w3eTKKr2d5ejZcgKYN-24.jpg?v=1668235294',
+'https://cdn.shopify.com/s/files/1/0634/6335/8721/products/VcepXxiXQ7qnTG1ktVYRTZHO6ywHQ4tE-24.jpg?v=1668235294'
+],
+$manager);
+
+$produit = $this->createProduct(' Forever Electric Iridescent Harness ',
+'Forever Electric Iridescent Harness you\'re my rave bae! This underbust harness has an iridescent vinyl construction, adjustable buckle shoulder straps, and elastic banding on the back.',
+16.90,
+18,
+[
+'https://cdn.shopify.com/s/files/1/0634/6335/8721/products/nED2AZQTyM2tJZlpNPzCXsnTEdHR8HqT-24.jpg?v=1652212175',
+'https://cdn.shopify.com/s/files/1/0634/6335/8721/products/YifiE65uxpXvRpBrtlp5dvx2YgG14xQ8-24.jpg?v=1652212175',
+'https://cdn.shopify.com/s/files/1/0634/6335/8721/products/47QB8SRodwAeYpb36SEBxgnWkPwNvM2k-24.jpg?v=1652212175',
+'https://cdn.shopify.com/s/files/1/0634/6335/8721/products/obBJ7Dk7UTM853FtJ5eHeU4veQJcYqHJ-24.jpg?v=1652212175'
+],
+$manager);
+
+$produit = $this->createProduct(' Blush Never Fur-Gotten Leg Warmers ',
+' Blush Never Fur-Gotten Leg Warmers for makin\' a lasting first impression! These mid-calf leg warmers have a stretchy ribbed knit construction and contrast-colored shaggy faux fur trim.',
+25.30,
+19,
+[
+'https://cdn.shopify.com/s/files/1/0634/6335/8721/products/PHQRvY8ovuJneIbOYtqsVLzY2TFazHDx-24.jpg?v=1676326945',
+'https://cdn.shopify.com/s/files/1/0634/6335/8721/products/FMajdpKRpCyMEHDKUAf3t5izyAtu6c7k-24.jpg?v=1676326945',
+'https://cdn.shopify.com/s/files/1/0634/6335/8721/products/7ulOcLbZfzVaFu0e1gDKR8WJTY7Y9i6V-24.jpg?v=1676326945'
+],
+$manager);
+
+$produit = $this->createProduct(' Daisy Parade Knit Leg Warmers ',
+' Daisy Parade Knit Leg Warmers you march to the beat of your own electric drum! These leg warmers have a chunky ribbed knit construction with daisy flower embellishments all over.',
+16.95,
+19,
+[
+'https://cdn.shopify.com/s/files/1/0634/6335/8721/products/g5c7W8oziTFlDhhxBMlpHa1Mx86W4wDB-24.jpg?v=1652897694',
+'https://cdn.shopify.com/s/files/1/0634/6335/8721/products/jKLDQXqL1G1S0w0lTJfGs8BzfVOdRdlT-24.jpg?v=1652897694',
+'https://cdn.shopify.com/s/files/1/0634/6335/8721/products/4E2I5uoq3FlOJjeYe16iOsF1tS4YRYG6-24.jpg?v=1652897694',
+'https://cdn.shopify.com/s/files/1/0634/6335/8721/products/jKLDQXqL1G1S0w0lTJfGs8BzfVOdRdlT-24.jpg?v=1652897694'
+],
+$manager);
+
+$produit = $this->createProduct(' Frosted Steal The Show Leg Warmers ',
+'Frosted Steal The Show Leg Warmers do what you do best. These leg warmers come in a ribbed knit construction, with a flared fit, and marabou faux fur trim.',
+20.00,
+19,
+[
+'https://cdn.shopify.com/s/files/1/0634/6335/8721/products/CRw4yMK83r1PsEetoECMCedtaSuHPNiv-24.jpg?v=1674069608',
+'https://cdn.shopify.com/s/files/1/0634/6335/8721/products/kBE6SSEf3tWqoNJjJnKXJha672o0NOOp-24.jpg?v=1673992741',
+'https://cdn.shopify.com/s/files/1/0634/6335/8721/products/EtDqW2z29E6CQYQSPqgGvpeMLrePnPDm-24.jpg?v=1673992741',
+'https://cdn.shopify.com/s/files/1/0634/6335/8721/products/vHOI3KeWPjRMVaXg6lPsQrqqhpEOYuD9-24.jpg?v=1673992741'
+],
+$manager);
+
 // $produit = $this->createProduct('',
 // '',
 // 0.00,
-// 11,
+// 7,
 // [
 // '',
 // '',
@@ -544,22 +708,7 @@ $manager);
 // $produit = $this->createProduct('',
 // '',
 // 0.00,
-// 11,
-// [
-// '',
-// '',
-// '',
-// '',
-// '',
-// ''
-// ],
-// $manager);
-
-
-// $produit = $this->createProduct('',
-// '',
-// 0.00,
-// 11,
+// 7,
 // [
 // '',
 // '',

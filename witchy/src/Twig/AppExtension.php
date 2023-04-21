@@ -31,6 +31,8 @@ class AppExtension extends AbstractExtension
             "dress" => "--clr:#f164de",
             "top" => "--clr:#35fff9",
             "bottom" => "--clr:#ffc535",
+            "shirt" => "--clr:#6543ff",
+            "pants" => "--clr:#ff9740",
             "bodysuit" => "--clr:#ff5d43",
             "coat" => "--clr:#ff3f70",
             "boots" => "--clr:#00dc82",

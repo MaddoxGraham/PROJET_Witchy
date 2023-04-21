@@ -22,13 +22,20 @@ class HeaderController extends AbstractController
         ]);
     }
 
-    #[Route('{slug}', name: 'categorieProducts')]
-    public function header(CategorieRepository $categorieRepository): Response
+    #[Route('{slugCat}/{slugSousCat}', name: 'categorieProducts')]
+    public function categorieProducts(string $slugCat, string $slugSousCat, CategorieRepository $categorieRepository, ProduitRepository $productRepository): Response
     {
-        $categories = $categorieRepository->findAll();
+        $sousCategorie = $categorieRepository->findOneBy(['slug' => $slugSousCat]);
+        $produits = $productRepository->findBy(['categorie' => $sousCategorie]);
         return $this->render('products/sousCategorie.html.twig', [
-            'categories' => $categories,
-            
+            'categories' => $categorieRepository->findAll(),
+            'surCategories' => $categorieRepository->findBy(['parent' => null]),
+            'SubCategories' => $categorieRepository->createQueryBuilder('c')
+                ->where('c.parent IS NOT NULL')
+                ->getQuery()
+                ->getResult(),
+            'produits' => $produits,
         ]);
     }
+
 }

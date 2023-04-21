@@ -237,34 +237,34 @@
 	</div>
 
 
-
 	<div class="row bg-Ardoise">
 
-{% for produit in produits %}
-            <div class="col-lg-3 mb-5 col-md-6">
-                <div class="card" data-images="{{ produit.photos|map(p => p.src)|join(',') }}">
-                    {% set primaryPhoto = produit.photos|filter(p => p.isPrimary is not null and p.isPrimary)|first %}
-                    <div class="parentRelatif cardImgSeller">
-                        <a href="{{ path('app_products_details', {'slug': produit.slug}) }}">
-                            <img src="{{ primaryPhoto.src }}" alt="{{ produit.shortLibel }}" class="card-img-top img-fluid">
-                        </a>
-                        <button type="button" class="card-text LargeFont">Add to cauldron</button>
-                        {% if produit.photos|length > 1 %}
-	                     {% set secondaryPhotos = produit.photos|filter(p => p.isPrimary is null) %}
-                            {% for photo in secondaryPhotos %}
-                                <div class="secondary-photo" style="display: none;">
-                                    <img src="{{ photo.src }}" alt="{{ produit.shortLibel }}" class="card-img-top img-fluid">
-                                </div>
-                            {% endfor %}
-                        {% endif %}
-                    </div>
-                    <div class="card-body">
-                        <div class="font-serif">{{ produit.shortLibel }}</div>
-                        <div>{{ produit.prxHt }} €</div>
-                    </div>
-                </div>
-            </div>
-        {% endfor %}
+		{% for produit in produits %}
+			<div class="col-lg-3 mb-5 col-md-6">
+				<div class="card" data-images="{{ produit.photos|map(p => p.src)|join(',') }}">
+					{% set primaryPhoto = produit.photos|filter(p => p.isPrimary is not null and p.isPrimary)|first %}
+					<div class="parentRelatif cardImgSeller">
+						<a href="{{ path('app_products_details', {'slug':produit.slug}) }}">
+							<img src="{{ primaryPhoto.src }}" alt="{{ produit.shortLibel }}" class="card-img-top img-fluid">
+						</a>
+						<button type="button" class="card-text LargeFont">Add to cauldron</button>
+						{% if produit.photos|length > 1 %}
+							{% set secondaryPhotos = produit.photos|filter(p => p.isPrimary is null) %}
+							{% for photo in secondaryPhotos %}
+								<div class="secondary-photo" style="display: none;">
+									<img src="{{ photo.src }}" alt="{{ produit.shortLibel }}" class="card-img-top img-fluid">
+								</div>
+							{% endfor %}
+						{% endif %}
+					</div>
+					<div class="card-body">
+						<div class="font-serif">{{ produit.shortLibel }}</div>
+						<div>{{ produit.prxHt }}
+							€</div>
+					</div>
+				</div>
+			</div>
+		{% endfor %}
 
 
 	</div>
@@ -287,7 +287,10 @@
 
 		<div class="col-12">
 
-			<div class="row currentObsBck mb--1 "> <a href="" class="col-12 txt-darkBrown font-serif font-typescript">⇒ Shop this doll's outfit ❤️‍🔥 🐙 🌶 </a>  </div>
+			<div class="row currentObsBck mb--1 ">
+				<a href="" class="col-12 txt-darkBrown font-serif font-typescript">⇒ Shop this doll's outfit ❤️‍🔥 🐙 🌶
+				</a>
+			</div>
 			<div class="row currentObsBck mb--1 ">
 				<div class="col-lg-4 col-md-12 demoDollBox">
 					<img class="img-fluid demoDoll" src="https://i.pinimg.com/originals/3a/e9/dd/3ae9dd9547ef4261e20ab5008b27dda8.gif" alt="">
@@ -303,8 +306,11 @@
 			</div>
 
 
-
-			<div class="row currentObsBck"><span href="" class="col-12 txt-darkBrown font-serif font-typescript"> Get your alien self into the street  </span>  </div>
+			<div class="row currentObsBck">
+				<span href="" class="col-12 txt-darkBrown font-serif font-typescript">
+					Get your alien self into the street
+				</span>
+			</div>
 
 		</div>
 
@@ -344,5 +350,4 @@
 	</div>
 </div>
 
-{% include "_partials/_footer.html.twig" %}
-{% endblock %}
+{% include "_partials/_footer.html.twig" %}{% endblock %}

@@ -1,164 +1,165 @@
 {% block body %}
-<div class="container bg-MediumBrown">
+	<div class="container bg-MediumBrown">
 
-	<div class="row flex-nowrap panel">
-
-
-		<div class=" boxingMove flex-nowrap">
-			<div class=" textToSlide col-md-12 col-lg-4 pe-5 ms-5 me-5 ps-5">
-				💫 Livraison gratuite dés 80€ d'achats ⭐️ 💖
-			</div>
-			<div class="  textToSlide2 col-lg-4 pe-5 ms-5 me-5 ps-5">✨ Get to the stars ! Shipping for free ! 🌟 💜
-			</div>
-		</div>
-
-	</div>
-</div>
-<div
-	class="container topBar d-flex bg-Brown justify-content-between ">
-
-	<!-- Boite A : Burger start -->
-
-	<div class="my-auto navBoxBurger">
+		<div class="row flex-nowrap panel">
 
 
-		<nav class="navbar  navbar-default  ">
-			<div class="container-fluid">
-
-				<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-					<span class="navbar-toggler-icon"></span>
-				</button>
-
-			</div>
-		</nav>
-	</div>
-
-
-	<!-- Boite A : Burger end -->
-
-
-	<!-- Boite B : LOGO  start-->
-	<a href="{{ path('app_catalogue')}}">
-		<div class="BoxTitleContainer my-auto">
-
-			<div class="col-lg-4 m-auto Logo col-md-12">
-				<img src="{{asset('assets/medias/WitchyLogo.gif')}}" class=" mx-auto d-block img-fluid" alt="logo Witchy">
-			</div>
-			<div class="col-lg-8 titleBox my-auto mx-auto ">
-				<h1 class="display-1">
-					Witchy</h1>
-				<div class="h3 subtitle">
-					Your dark soulmate
+			<div class=" boxingMove flex-nowrap">
+				<div class=" textToSlide col-md-12 col-lg-4 pe-5 ms-5 me-5 ps-5">
+					💫 Livraison gratuite dés 80€ d'achats ⭐️ 💖
+				</div>
+				<div class="  textToSlide2 col-lg-4 pe-5 ms-5 me-5 ps-5">✨ Get to the stars ! Shipping for free ! 🌟 💜
 				</div>
 			</div>
+
 		</div>
-	</a>
-	<!-- Boite B : LOGO  end-->
+	</div>
+	<div
+		class="container topBar d-flex bg-Brown justify-content-between ">
+
+		<!-- Boite A : Burger start -->
+
+		<div class="my-auto navBoxBurger">
 
 
-	<!-- Boite c : ICONS start -->
-	<div class="my-auto d-flex flex-nowrap">
-		<button type="button" class="bg-Brown ">
-			<div class="col-md-6 iconMaker panier ">
-				<p class="roudCount m-auto">
-					<span class="nbr m-auto">
-						2</span>
-				</p>
-				<img src="{{asset('assets/medias/meh.png')}}" class="img-fluid" alt="votre chaudron">
-			</div>
-		</button>
-		<a href="{{ path('app_login')}}" class="bg-Brown ">
-			<div class="col-md-6 iconMaker"><img src="{{asset('assets/medias/mehProfRec.png')}}" class="img-fluid" alt="votre acount">
+			<nav class="navbar  navbar-default  ">
+				<div class="container-fluid">
+
+					<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+						<span class="navbar-toggler-icon"></span>
+					</button>
+
+				</div>
+			</nav>
+		</div>
+
+
+		<!-- Boite A : Burger end -->
+
+
+		<!-- Boite B : LOGO  start-->
+		<a href="{{ path('app_catalogue')}}">
+			<div class="BoxTitleContainer my-auto">
+
+				<div class="col-lg-4 m-auto Logo col-md-12">
+					<img src="{{asset('assets/medias/WitchyLogo.gif')}}" class=" mx-auto d-block img-fluid" alt="logo Witchy">
+				</div>
+				<div class="col-lg-8 titleBox my-auto mx-auto ">
+					<h1 class="display-1">
+						Witchy</h1>
+					<div class="h3 subtitle">
+						Your dark soulmate
+					</div>
+				</div>
 			</div>
 		</a>
+		<!-- Boite B : LOGO  end-->
 
 
+		<!-- Boite c : ICONS start -->
+		<div class="my-auto d-flex flex-nowrap">
+			<button type="button" class="bg-Brown ">
+				<div class="col-md-6 iconMaker panier ">
+					<p class="roudCount m-auto">
+						<span class="nbr m-auto">
+							2</span>
+					</p>
+					<img src="{{asset('assets/medias/meh.png')}}" class="img-fluid" alt="votre chaudron">
+				</div>
+			</button>
+			<a href="{{ path('app_login')}}" class="bg-Brown ">
+				<div class="col-md-6 iconMaker"><img src="{{asset('assets/medias/mehProfRec.png')}}" class="img-fluid" alt="votre acount">
+				</div>
+			</a>
+
+
+		</div>
 	</div>
-</div>
-<!-- Boite c : ICONS  end-->
+	<!-- Boite c : ICONS  end-->
 
-<container class="contentNav ">
+	<container class="contentNav ">
 
-	<div class="collapse p-3 bg-Ardoise txt-LightGrey navbar-collapse" id="navbarNav">
-		<span class="triangle"></span>
+		<div class="collapse p-3 bg-Ardoise txt-LightGrey navbar-collapse" id="navbarNav">
+			<span class="triangle"></span>
 
-		<ul class="navbar-nav flexNav">
-			<div>
-				<li class="nav-item border-bottom border-light pb-2 d-flex justify-content-between majorClass ">
-					<a class="nav-link active" aria-current="page" href="#">New</a>
-					<i class="fa-sharp fa-solid fa-caret-down"></i>
-				</li>
+			<ul class="navbar-nav flexNav">
+				<div>
+					<li class="nav-item border-bottom border-light pb-2 d-flex justify-content-between majorClass ">
+						<a class="nav-link active" aria-current="page" href="#">New</a>
+						<i class="fa-sharp fa-solid fa-caret-down"></i>
+					</li>
 
-				<ul class="navbar-nav undernav underHidden">
-					<div class="col-md-6 catBoxSubMenu">
-						<li style="--clr:#ff1717" class="nav-item border-light">
-							<a class="nav-link active subClass" aria-current="page" href="#" data-text="What">
-								What's new ?
-							</a>
+					<ul class="navbar-nav undernav underHidden">
+						<div class="col-md-6 catBoxSubMenu">
+							<li style="--clr:#ff1717" class="nav-item border-light">
+								<a class="nav-link active subClass" aria-current="page" href="#" data-text="What">
+									What's new ?
+								</a>
+							</li>
+							<li style="--clr:#fffb17" class="nav-item border-light">
+								<a class="nav-link active subClass" aria-current="page" href="#" data-text="Back">
+									Back in stock
+								</a>
+							</li>
+
+							<li style="--clr:#17ffbc" class="nav-item border-light ">
+								<a class="nav-link active subClass" aria-current="page" href="#" data-text="current">
+									current obssession
+								</a>
+							</li>
+						</div>
+						<div class="col-md-6  my-auto demoUnderCatImg">
+							<div>
+								<img class="img-fluid" src="https://i.pinimg.com/originals/e2/b8/3d/e2b83d45b6f4566ad9aaca0062989bc5.gif" alt="Tag you're in"></div>
+							<p class="">
+								<span class="DarkGlitch" data-text="Black is ~ ~">
+									<span class="font-serif">Black is</span>
+									my bright side</span>
+							</p>
+							<div>
+								<img class="img-fluid" src="https://i.pinimg.com/564x/af/ba/9c/afba9cb616b506bb9d0cb94968f84e18.jpg" alt="where is the Big Bad Wolf ? "></div>
+
+
+						</div>
+					</ul>
+				</div>
+
+				{% for surCategorie in surCategories %}
+					<div>
+						<li class="nav-item border-bottom border-light pt-2 pb-2 d-flex justify-content-between majorClass">
+							<a class="nav-link " href="#">{{surCategorie.nomination}}</a>
+							<i class="fa-sharp fa-solid fa-caret-down"></i>
 						</li>
-						<li style="--clr:#fffb17" class="nav-item border-light">
-							<a class="nav-link active subClass" aria-current="page" href="#" data-text="Back">
-								Back in stock
-							</a>
-						</li>
+						<ul class="navbar-nav undernav underHidden">
+							<div class="col-md-6 catBoxSubMenu">
+								{% for SubCategorie in SubCategories %}
+									{% if surCategorie == SubCategorie.parent %}
 
-						<li style="--clr:#17ffbc" class="nav-item border-light ">
-							<a class="nav-link active subClass" aria-current="page" href="#" data-text="current">
-								current obssession
-							</a>
-						</li>
-					</div>
-					<div class="col-md-6  my-auto demoUnderCatImg">
-						<div>
-							<img class="img-fluid" src="https://i.pinimg.com/originals/e2/b8/3d/e2b83d45b6f4566ad9aaca0062989bc5.gif" alt="Tag you're in"></div>
-						<p class="">
-							<span class="DarkGlitch" data-text="Black is ~ ~">
-								<span class="font-serif">Black is</span>
-								my bright side</span>
-						</p>
-						<div>
-							<img class="img-fluid" src="https://i.pinimg.com/564x/af/ba/9c/afba9cb616b506bb9d0cb94968f84e18.jpg" alt="where is the Big Bad Wolf ? "></div>
+										{% set value = getCategoryString(SubCategorie.slug) ?: "--clr:#ffffff" %}
+										{% set subCategorieWords = SubCategorie.nomination|split(' ') %}
+										{% set subCategorieFirstWord = subCategorieWords[0] %}
 
-
-					</div>
-				</ul>
-			</div>
-
-	{% for surCategorie in surCategories %}
-<div> 
-	<li class="nav-item border-bottom border-light pt-2 pb-2 d-flex justify-content-between majorClass">
-					<a class="nav-link " href="#">{{surCategorie.nomination}}</a>
-					<i class="fa-sharp fa-solid fa-caret-down"></i>
-				</li>
-<ul class="navbar-nav undernav underHidden">
-	<div class="col-md-6 catBoxSubMenu">
-			{% for SubCategorie in SubCategories %}
-			{% if surCategorie == SubCategorie.parent %}
-				
-				{% set value = getCategoryString(SubCategorie.slug) ?: "--clr:#ffffff" %}
-  				{% set subCategorieWords = SubCategorie.nomination|split(' ') %}
-        		{% set subCategorieFirstWord = subCategorieWords[0] %}
-
-						<li style="{{ value }}" class="nav-item border-light">
-<a class="nav-link active subClass" href="{{ path('categorieProducts', {'slug': SubCategorie.slug}) }}" data-text="{{ subCategorieFirstWord }}" >{{ SubCategorie.nomination }}</a>
-
-						</li>
-							{% endif %}
+										<li style="{{ value }}" class="nav-item border-light">
+											<a class="nav-link active subClass" href="{{ path('categorieProducts',{'slugCat': surCategorie.slug,'slugSousCat': SubCategorie.slug}) }}" data-text="{{ subCategorieFirstWord }}">{{ SubCategorie.nomination }}</a>
+										</li>
+									{% endif %}
 								{% endfor %}
-								</div>
-					 {{ getCategoryVisual(surCategorie.slug)|raw }} 
-								</ul>
-								</div>
-							{% endfor %}
-	<div>
+							</div>
+							{{ getCategoryVisual(surCategorie.slug)|raw }}
+						</ul>
+					</div>
+				{% endfor %}
+				<div>
 
-		<li class="nav-item border-bottom border-light pt-2 pb-2 d-flex justify-content-between majorClass">
-			<a class="nav-link text-danger" href="#">Clearance</a>
-			<i class="fa-sharp fa-solid fa-caret-down"></i>
-		</li>
+					<li class="nav-item border-bottom border-light pt-2 pb-2 d-flex justify-content-between majorClass">
+						<a class="nav-link text-danger" href="#">Clearance</a>
+						<i class="fa-sharp fa-solid fa-caret-down"></i>
+					</li>
 
-	</div>
-	<div></div>
-</ul></div></container>
+				</div>
+				<div></div>
+			</ul>
+		</div>
+	</container>
 
 {% endblock %}

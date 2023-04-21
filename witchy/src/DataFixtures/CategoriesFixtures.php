@@ -30,8 +30,8 @@ class CategoriesFixtures extends Fixture
         $this->createCategory('Bodysuit',$women,$manager);
 
 /*************** MALE  *****************/
-        $this->createCategory('Top',$Men,$manager);
-        $this->createCategory('Bottom',$Men,$manager);
+        $this->createCategory('Shirt',$Men,$manager);
+        $this->createCategory('Pants',$Men,$manager);
         $this->createCategory('Coat',$Men,$manager);
         
 /*************** SHOES  *****************/

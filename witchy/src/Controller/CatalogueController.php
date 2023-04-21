@@ -10,27 +10,24 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class CatalogueController extends AbstractController
 {
- 
+
 
     #[Route('/', name: 'app_catalogue')]
-    public function main(CategorieRepository $categorieRepository,ProduitRepository $produitRepository): Response
+    public function main(CategorieRepository $categorieRepository, ProduitRepository $produitRepository): Response
     {
         // Récupérer tous les produits de la base de données
-$produits = $produitRepository->findAll();
-
-// Sélectionner aléatoirement 12 produits
-$randomKeys = array_rand($produits, 12);
-$randomProducts = array_intersect_key($produits, array_flip($randomKeys));
+        $produits = $produitRepository->findAll();
+        // Sélectionner aléatoirement 12 produits
+        $randomKeys = array_rand($produits, 12);
+        $randomProducts = array_intersect_key($produits, array_flip($randomKeys));
 
         return $this->render('catalogue/index.html.twig', [
-            'produits' => $randomProducts, 
+            'produits' => $randomProducts,
             'surCategories' => $categorieRepository->findBy(['parent' => null]),
             'SubCategories' => $categorieRepository->createQueryBuilder('c')
-            ->where('c.parent IS NOT NULL')
-            ->getQuery()
-            ->getResult(),
+                ->where('c.parent IS NOT NULL')
+                ->getQuery()
+                ->getResult(),
         ]);
-
     }
-
 }

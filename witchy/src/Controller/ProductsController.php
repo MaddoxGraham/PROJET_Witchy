@@ -29,6 +29,7 @@ class ProductsController extends AbstractController{
     
     #[Route('/{slug}', name: 'details')]
     public function details(Produit $produit,ProduitRepository $produitRepository, CategorieRepository $categorieRepository): Response{
+        dd('prout');
         $categoriesProduit = $produitRepository->findBy(['categorie' => $produit->getCategorie()]);
         $surCategories = $categorieRepository->findBy(['parent' => null]);
         $SubCategories = $categorieRepository->createQueryBuilder('c')
@@ -38,26 +39,6 @@ class ProductsController extends AbstractController{
 
     return $this->render('products/details.html.twig', compact('produit', 'categoriesProduit', 'surCategories', 'SubCategories'));
     }
-
-    // public function sousCategorie($slug)
-    // {
-    //     // récupérer la sous-catégorie correspondante au slug
-    //     $sousCategorie = $this->getDoctrine()->getRepository(SousCategorie::class)->findOneBy(['slug' => $slug]);
-    
-    //     // vérifier si la sous-catégorie existe
-    //     if (!$sousCategorie) {
-    //         throw $this->createNotFoundException('La sous-catégorie n\'existe pas');
-    //     }
-    
-    //     // récupérer tous les produits de la sous-catégorie
-    //     $produits = $this->getDoctrine()->getRepository(Produit::class)->findBy(['sousCategorie' => $sousCategorie]);
-    
-    //     // afficher la page de la sous-catégorie avec les produits correspondants
-    //     return $this->render('products/sousCategorie.html.twig', [
-    //         'produits' => $produits,
-    //         'sousCategorie' => $sousCategorie
-    //     ]);
-    // }
     
 
 
