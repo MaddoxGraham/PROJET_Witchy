@@ -49,7 +49,7 @@ class ClientAuthenticator extends AbstractLoginFormAuthenticator
 
         // For example:
         //WARNING : je ne sais pas si la route named main est correcte a voir a l'utilisation
-         return new RedirectResponse($this->urlGenerator->generate('app_catalogue'));
+         return new RedirectResponse($this->urlGenerator->generate('witchy_index'));
        //throw new \Exception('TODO: provide a valid redirect inside '.__FILE__);
     }
 

@@ -29,7 +29,6 @@ class ProductsController extends AbstractController{
     
     #[Route('/{slug}', name: 'details')]
     public function details(Produit $produit,ProduitRepository $produitRepository, CategorieRepository $categorieRepository): Response{
-        dd('prout');
         $categoriesProduit = $produitRepository->findBy(['categorie' => $produit->getCategorie()]);
         $surCategories = $categorieRepository->findBy(['parent' => null]);
         $SubCategories = $categorieRepository->createQueryBuilder('c')

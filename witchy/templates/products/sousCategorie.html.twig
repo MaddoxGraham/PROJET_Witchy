@@ -10,7 +10,7 @@
                 <div class="card" data-images="{{ produit.photos|map(p => p.src)|join(',') }}">
                     {% set primaryPhoto = produit.photos|filter(p => p.isPrimary is not null and p.isPrimary)|first %}
                     <div class="parentRelatif cardImgSeller">
-                        <a href="{{ produit.slug }}">
+                        <a href="{{ path('app_products_details', {'slug':produit.slug}) }}">
                             <img src="{{ primaryPhoto.src }}" alt="{{ produit.shortLibel }}" class="card-img-top img-fluid">
                         </a>
                         <button type="button" class="card-text LargeFont">Add to cauldron</button>

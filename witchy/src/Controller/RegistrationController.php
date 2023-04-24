@@ -5,6 +5,7 @@ namespace App\Controller;
 use App\Entity\Adresse;
 use App\Entity\Client;
 use App\Form\RegistrationFormType;
+use App\Repository\CategorieRepository;
 use App\Repository\CoefficientRepository;
 use App\Repository\CommercialRepository;
 use App\Security\ClientAuthenticator;
@@ -16,9 +17,11 @@ use Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Security\Http\Authentication\UserAuthenticatorInterface;
 
+
+#[Route('/jointhecult', name:'app_profil_')]
 class RegistrationController extends AbstractController
 {
-    #[Route('/inscription', name: 'app_register')]
+    #[Route('/register', name: 'register')]
     public function register(
         Request $request,
         UserPasswordHasherInterface $userPasswordHasher,
@@ -27,6 +30,8 @@ class RegistrationController extends AbstractController
         EntityManagerInterface $entityManager,
         CommercialRepository $commercialRepository,
         CoefficientRepository $coefficientRepository,
+        CategorieRepository $categorieRepository,
+        
     ): Response {
         $adresse = new Adresse();
         $user = new Client();
@@ -72,6 +77,11 @@ class RegistrationController extends AbstractController
 
         return $this->render('registration/register.html.twig', [
             'registrationForm' => $form->createView(),
+            'surCategories' => $categorieRepository->findBy(['parent' => null]),
+            'SubCategories' => $categorieRepository->createQueryBuilder('c')
+            ->where('c.parent IS NOT NULL')
+            ->getQuery()
+            ->getResult(),
         ]);
     }
 }

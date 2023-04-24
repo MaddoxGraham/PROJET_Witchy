@@ -38,7 +38,7 @@
 
 
 		<!-- Boite B : LOGO  start-->
-		<a href="{{ path('app_catalogue')}}">
+		<a href="{{ path('witchy_index')}}">
 			<div class="BoxTitleContainer my-auto">
 
 				<div class="col-lg-4 m-auto Logo col-md-12">
@@ -107,6 +107,11 @@
 									current obssession
 								</a>
 							</li>
+								<li style="--clr:#ef54ff" class="nav-item border-light ">
+								<a class="nav-link active subClass" aria-current="page" href="{{path('app_products_index')}}" data-text="Want">
+									Want to see them All ? 
+								</a>
+							</li>
 						</div>
 						<div class="col-md-6  my-auto demoUnderCatImg">
 							<div>
@@ -140,7 +145,7 @@
 										{% set subCategorieFirstWord = subCategorieWords[0] %}
 
 										<li style="{{ value }}" class="nav-item border-light">
-											<a class="nav-link active subClass" href="{{ path('categorieProducts',{'slugCat': surCategorie.slug,'slugSousCat': SubCategorie.slug}) }}" data-text="{{ subCategorieFirstWord }}">{{ SubCategorie.nomination }}</a>
+											<a class="nav-link active subClass" href="{{ path('app_header_categorieProducts',{'slugCat': surCategorie.slug,'slugSousCat': SubCategorie.slug}) }}" data-text="{{ subCategorieFirstWord }}">{{ SubCategorie.nomination }}</a>
 										</li>
 									{% endif %}
 								{% endfor %}
