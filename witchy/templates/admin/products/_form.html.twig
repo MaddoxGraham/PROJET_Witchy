@@ -1,0 +1,20 @@
+
+{{form_start(productform)}}
+
+{{form_row(productform.ShortLibel)}}
+{{form_row(productform.LongLibel)}}
+{{form_row(productform.categorie)}}
+{{form_row(productform.prxHt)}}
+
+{{form_row(productform.photos)}}
+<div class="row d-flex justify-content-between">
+    <div class="col-4">
+        <button type="submit" class="btn btn-secondary"> Validate product </button>
+    </div>
+    <div class="col-4 text-end">
+        <a href="{{ path('admin_products_index') }}" class="btn btn-danger"> Return to products </a>
+    </div>
+</div>
+
+
+{{form_end(productform)}}

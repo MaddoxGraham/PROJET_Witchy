@@ -1,0 +1,22 @@
+{% extends "base.html.twig" %}
+
+{% block title %}ADMINISTRATION
+{% endblock %}
+
+{% block body %}
+	<h1 class="h4 txt-Ardoise m-auto text-center pt-4 font-serif">Add a product
+	</h1>
+
+<div class="container m-4 txt-Ardoise font-serif">
+  <div class="row justify-content-center">
+    <div class="col-md-10">
+      {% include "admin/products/_form.html.twig" %}
+    </div>
+  </div>
+</div>
+
+
+
+
+	{% include "_partials/_footer.html.twig" %}
+{% endblock %}

@@ -31,7 +31,8 @@ class Produit
     #[ORM\Column(length: 255)]
     private ?string $slug = null;
 
-    #[ORM\OneToMany(mappedBy: 'RefProduit', targetEntity: Photo::class)]
+    #[ORM\OneToMany(mappedBy: 'RefProduit', targetEntity: Photo::class,
+    orphanRemoval: true, cascade:['persist'])]
     private Collection $photos;
 
     #[ORM\OneToMany(mappedBy: 'RefProduit', targetEntity: LigneCommande::class, orphanRemoval: true)]

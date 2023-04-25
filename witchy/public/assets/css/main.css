@@ -48,6 +48,9 @@
 .txt-LightSand {
   color: var(--lightSand) !important;
 }
+.txt-Ardoise {
+  color: var(--ardoise) !important;
+}
 
 .txt-darkBrown {
   color: var(--darkBrown) !important;
@@ -2031,4 +2034,30 @@ display: block;
 .description{
 font-size: 3.8vw;
 margin-bottom: 1.5rem !important;
+}
+
+
+
+.fixed-bottom {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 10px;
+  background-color: rgba(255, 255, 255, 0.9);
+  text-align: center;
+}
+
+.fixed-bottom span {
+  color: #000000;
+  border-color: #000000;  
+  font-size: 1.2rem;
+  letter-spacing: 1px;
+}
+
+.fixed-bottom span:hover {
+  opacity: 0.8;
+}
+.fixed-bottom:hover {
+  background-color: #F2F2F2;
 }

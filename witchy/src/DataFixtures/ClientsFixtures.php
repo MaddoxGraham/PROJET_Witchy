@@ -71,7 +71,7 @@ class ClientsFixtures extends Fixture
         $prodadmin->setPassword(
             $this->passwordEncoder->hashPassword($prodadmin,'adminprod')
         );
-        $prodadmin->setRoles(['ROLE_PRODUCT_ADMIN']);
+        $prodadmin->setRoles(['ROLE_USER']);
         $manager->persist($prodadmin);
 
         /***CREATE ADRESSE ****/

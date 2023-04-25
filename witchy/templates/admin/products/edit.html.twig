@@ -1,0 +1,69 @@
+{% extends "base.html.twig" %}
+
+{% block title %}ADMINISTRATION
+{% endblock %}
+{% block body %}
+	<div class="container-fluid">
+  <div class="row d-flex justify-content-center align-items-center pt-3">
+<div class="col-lg-5 mb-5 col-md-5">
+    <div class="card">
+        {% if produit.photos|length > 0 %}
+            <div id="carousel{{ produit.id }}" class="carousel slide" data-bs-ride="carousel">
+                <ol class="carousel-indicators">
+                    {% for photo in produit.photos %}
+                        <li data-bs-target="#carousel{{ produit.id }}" data-bs-slide-to="{{ loop.index0 }}" {% if photo.isPrimary %} class="active" {% endif %}></li>
+                    {% endfor %}
+                </ol>
+                <div class="carousel-inner">
+                    {% for photo in produit.photos %}
+                        <div class="carousel-item {% if photo.isPrimary %}active{% endif %}">
+
+                        {% if photo.src[:4] == 'http' %}
+                            <img src="{{ photo.src }}" alt="{{ produit.shortLibel }}" class="d-block w-100">
+                        {% else %}
+                            <img src="{{ asset('assets/uploads/products/mini/300x300-' ~ photo.src ) }}" alt="{{ produit.shortLibel }}" class="d-block w-100">
+                        {% endif %}
+
+                        </div>
+                    {% endfor %}
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carousel{{ produit.id }}" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carousel{{ produit.id }}" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+        {% else %}
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d1/Image_not_available.png/640px-Image_not_available.png" alt="No image available" class="card-img-top">
+        {% endif %}
+        <div class="card-body">
+            <div class="font-serif">{{ produit.shortLibel }}</div>
+            <div>{{ produit.prxHt }}€</div>
+        </div>
+    </div>
+</div>
+
+
+
+				<div class="col-lg-6">
+					<h1 class="h4 txt-Ardoise m-auto text-center pt-4 font-serif">Edit this product :
+						{{produit.ShortLibel}}</h1>
+					<div class="container m-2 txt-Ardoise font-serif">
+						<div class="row justify-content-center">
+							<div class="col-md-12">
+								{% include "admin/products/_form.html.twig" %}
+							</div>
+						</div>
+					</div>
+				</div>
+
+			</div>
+
+	</div>
+
+
+	{% include "_partials/_footer.html.twig" %}
+{% endblock %}

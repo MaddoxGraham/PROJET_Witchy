@@ -252,7 +252,15 @@
 							{% set secondaryPhotos = produit.photos|filter(p => p.isPrimary is null) %}
 							{% for photo in secondaryPhotos %}
 								<div class="secondary-photo" style="display: none;">
-									<img src="{{ photo.src }}" alt="{{ produit.shortLibel }}" class="card-img-top img-fluid">
+									
+									
+									{% if photo.src[:4] == 'http' %}
+										<img src="{{ photo.src }}" alt="{{ produit.shortLibel }}" class="d-block w-100">
+									{% else %}
+										<img src="{{ asset('assets/uploads/products/mini/300x300-' ~ photo.src ) }}" alt="{{ produit.shortLibel }}" class="d-block w-100">
+									{% endif %}
+									
+
 								</div>
 							{% endfor %}
 						{% endif %}
