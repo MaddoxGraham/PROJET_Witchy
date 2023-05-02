@@ -237,47 +237,30 @@
 	</div>
 
 
-	<div class="row bg-Ardoise">
+<div class="row bg-Ardoise">
+  {% for produit in produits %}
+    <div class="col-lg-3 mb-5 col-md-6">
+      <div class="card" data-images="{{ produit.photos|map(p => p.src)|join(',') }}">
+        {% set primaryPhoto = produit.photos|filter(p => p.isPrimary is not null and p.isPrimary)|first %}
+        <div class="parentRelatif cardImgSeller">
+          <a href="{{ path('app_products_details', {'slug':produit.slug}) }}">
+            {% if primaryPhoto.src[:4] == 'http' %}
+              <img src="{{ primaryPhoto.src }}" alt="{{ produit.shortLibel }}" class="d-block h-100 d-inline-block card-img-top img-fluid w-100">
+            {% else %}
+              <img src="{{ asset('assets/uploads/products/mini/300x300-' ~ primaryPhoto.src ) }}" alt="{{ produit.shortLibel }}" class="d-block h-100 d-inline-block card-img-top img-fluid w-100">
+            {% endif %}
+          </a>
+          <button type="button" class="card-text LargeFont">Add to cauldron</button>
+        </div>
+        <div class="card-body">
+          <div class="font-serif">{{ produit.shortLibel }}</div>
+          <div>{{ produit.prxHt }}€</div>
+        </div>
+      </div>
+    </div>
+  {% endfor %}
+</div>
 
-		{% for produit in produits %}
-			<div class="col-lg-3 mb-5 col-md-6">
-				<div class="card" data-images="{{ produit.photos|map(p => p.src)|join(',') }}">
-					{% set primaryPhoto = produit.photos|filter(p => p.isPrimary is not null and p.isPrimary)|first %}
-					<div class="parentRelatif cardImgSeller">
-						<a href="{{ path('app_products_details', {'slug':produit.slug}) }}">
-							{% if primaryPhoto.src[:4] == 'http' %}
-								{{dump( primaryPhoto.src)}}
-								<img src="{{ primaryPhoto.src }}" alt="{{ produit.shortLibel }}" class="d-block h-100 d-inline-block card-img-top img-fluid w-100">
-							{% else %}
-							{{dump( primaryPhoto.src)}}
-								<img src="{{ asset('assets/uploads/products/mini/300x300-' ~ primaryPhoto.src ) }}" alt="{{ produit.shortLibel }}" class="d-block h-100 d-inline-block card-img-top img-fluid w-100">
-							{% endif %}
-						</a>
-						<button type="button" class="card-text LargeFont">Add to cauldron</button>
-						{# {% if produit.photos|length > 1 %}
-							{% set secondaryPhotos = produit.photos|filter(p => p.isPrimary is null) %}
-							{% for photo in secondaryPhotos %}
-								<div class="secondary-photo" style="display: none;">
-									{% if photo.src[:4] == 'http' %}
-										<img src="{{ photo.src }}" alt="{{ produit.shortLibel }}" class="d-block w-100">
-									{% else %}
-										<img  data-images="{{ asset('assets/uploads/products/mini/300x300-' ~ photo.src ) }}" src="{{ asset('assets/uploads/products/mini/300x300-' ~ photo.src ) }}" alt="{{ produit.shortLibel }}" class="d-block w-100">
-									{% endif %}
-								</div>
-							{% endfor %}
-						{% endif %} #}
-					</div>
-					<div class="card-body">
-						<div class="font-serif">{{ produit.shortLibel }}</div>
-						<div>{{ produit.prxHt }}
-							€</div>
-					</div>
-				</div>
-			</div>
-		{% endfor %}
-
-
-	</div>
 </div>
 
 <div class="container bg-Ardoise currentObsession">
