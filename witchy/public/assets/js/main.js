@@ -29,41 +29,35 @@ for (let index = 0; index < catBtn.length; index++) {
 
 }
 
-document.querySelectorAll('.card').forEach(card => {
-  const images = card.getAttribute('data-images').split(',');
-  console.log(images);
-  let currentImage = 0;
+// const cards = document.querySelectorAll('.bestSeller .card');
 
-  const primaryImage = card.querySelector('.card-img-top');
-  const parentDiv = primaryImage.parentElement;
+// cards.forEach((card) => {
+//   const images = card.dataset.images.split(',');
+//   let src;
+//   if (images[0].startsWith('http')) {
+//     src = images[0];
+//   } else {
+//     const blob = new Blob([images[0]], { type: 'image/webp' });
+//     src = URL.createObjectURL(blob);
+//   }
+//   const img = document.createElement('img');
+//   img.src = src;
+//   img.alt = card.querySelector('.font-serif').textContent;
+//   img.classList.add('d-block', 'h-100', 'd-inline-block', 'card-img-top', 'img-fluid', 'w-100');
+//   const link = card.querySelector('a');
+//   link.setAttribute('id', 'ancre');
+//   link.appendChild(img);
 
-  // Ajout de la balise img pour la deuxième image
-  const secondaryImage = document.createElement('img');
-  secondaryImage.classList.add('d-block', 'h-100', 'd-inline-block', 'card-img-top', 'img-fluid', 'w-100');
-  parentDiv.insertBefore(secondaryImage, primaryImage.nextSibling);
+//   img.addEventListener('mouseover', () => {
+//     if (images[1].startsWith('http')) {
+//       img.src = images[1];
+//     } else {
+//       const blob = new Blob([images[1]], { type: 'image/webp' });
+//       img.src = URL.createObjectURL(blob);
+//     }
+//   });
 
-  // Affichage de la première image
-  primaryImage.src = images[0];
-
-  // Fonction pour changer l'image au survol
-  parentDiv.addEventListener('mouseenter', () => {
-    currentImage = (currentImage + 1) % images.length;
-    if (currentImage === 0) {
-      primaryImage.style.display = 'block';
-      secondaryImage.style.display = 'none';
-    } else {
-      primaryImage.style.display = 'none';
-      secondaryImage.style.display = 'block';
-      secondaryImage.src = images[currentImage];
-    }
-  });
-
-  // Fonction pour revenir à la première image en sortant du survol
-  parentDiv.addEventListener('mouseleave', () => {
-    currentImage = 0;
-    primaryImage.style.display = 'block';
-    secondaryImage.style.display = 'none';
-  });
-});
-
-
+//   img.addEventListener('mouseout', () => {
+//     img.src = src;
+//   });
+// });
