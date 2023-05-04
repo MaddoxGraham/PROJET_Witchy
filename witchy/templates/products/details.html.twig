@@ -80,14 +80,26 @@
 						{% set primaryPhoto = prodCat.photos|filter(p => p.isPrimary is not null and p.isPrimary)|first %}
 						<div class="parentRelatif cardImgSeller">
 							<a href="{{ prodCat.slug }}">
-								<img src="{{ primaryPhoto.src }}" alt="{{ prodCat.shortLibel }}" class="card-img-center img-fluid">
+							{% if primaryPhoto.src[:4] == 'http' %}
+									<img src="{{ primaryPhoto.src }}" alt="{{ produit.shortLibel }}" class="card-img-center img-fluid">
+
+								{% else %}
+									<img src="{{ asset('assets/uploads/products/mini/300x300-' ~ primaryPhoto.src ) }}" alt="{{ produit.shortLibel }}" class="card-img-center img-fluid">
+
+								{% endif %}
 							</a>
 							<button type="button" class="card-text LargeFont">Add to cauldron</button>
 							{% if prodCat.photos|length > 1 %}
 								{% set secondaryPhotos = prodCat.photos|filter(p => p.isPrimary is null) %}
 								{% for photo in secondaryPhotos %}
 									<div class="secondary-photo" style="display: none;">
-										<img src="{{ photo.src }}" alt="{{ prodCat.shortLibel }}" class="card-img-center img-fluid">
+									{% if photo.src[:4] == 'http' %}
+									<img src="{{ primaryPhoto.src }}" alt="{{ produit.shortLibel }}" class="card-img-center img-fluid">
+
+								{% else %}
+									<img src="{{ asset('assets/uploads/products/mini/300x300-' ~ primaryPhoto.src ) }}" alt="{{ produit.shortLibel }}" class="card-img-center img-fluid">
+
+								{% endif %}
 									</div>
 								{% endfor %}
 							{% endif %}

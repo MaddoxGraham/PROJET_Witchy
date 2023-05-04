@@ -1,0 +1,73 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+	 Your Cart 
+{% endblock %}
+
+{% block body %}
+	{% if app.user %}
+		<div class="mb-3 text-center">
+			Votre panier 
+			{{ app.user.prenom }},
+			<a href="{{ path('app_logout') }}">Logout</a>
+		</div>
+
+	{% else %}
+		
+
+		<div style="font-weight: normal;" class="container font-serif">
+
+		<div class="table-responsive">
+			<table class="table table-striped">
+				<thead>
+					<tr>
+						
+						<th>Name</th>
+						<th>Price</th>
+						<th>Photos</th>
+                        						<th>Total</th>
+						<th>Actions</th>
+					</tr>
+				</thead>
+				<tbody>
+
+				
+							<td>{{ dataCart.produit.shortLibel }}</td>
+							<td>{{ dataCart.produit.prxHt }}</td>
+							<td>
+								<div class="row">
+									{% for photo in dataCart.produit.photos %}
+										<div class="col-sm-2">
+											
+									{% if photo.src[:4] == 'http' %}
+										<img src="{{ photo.src }}" alt="{{ dataCart.produit.shortLibel }}" class="d-block w-50">
+									{% else %}
+										<img src="{{ asset('assets/uploads/products/mini/300x300-' ~ photo.src ) }}" alt="{{ dataCart.produit.shortLibel }}" class="d-block w-50">
+									{% endif %}
+										</div>
+                                        {% else %}
+            <p> Your cart is empty </p>
+
+									{% endfor %}
+								</div>
+							</td>
+                            <td>{{ dataCart.quantite * dataCart.produit.prxHt }}</td>
+							<td>
+								<div class="btn-group">
+									<a href="{{ path('admin_products_edit', {'id': dataCart.produit.id}) }}" class="btn text-success">
+										<i class="fa fa-edit"></i>
+										Edit</a>
+									<a href="{{ path('admin_products_delete', {'id': dataCart.produit.id}) }}" class="btn text-danger">
+										<i class="fa fa-trash"></i>
+										Delete</a>
+								</div>
+							</td>
+						</tr>
+			
+				</tbody>
+			</table>
+	{% endif %}
+
+	{% include "_partials/_footer.html.twig" %}
+
+{% endblock %}

@@ -58,15 +58,17 @@
 
 		<!-- Boite c : ICONS start -->
 		<div class="my-auto d-flex flex-nowrap">
-			<button type="button" class="bg-Brown ">
+		<a href="{{ path('app_cart_index')}}" class="bg-Brown ">
 				<div class="col-md-6 iconMaker panier ">
 					<p class="roudCount m-auto">
 						<span class="nbr m-auto">
 							2</span>
 					</p>
+					
 					<img src="{{asset('assets/medias/meh.png')}}" class="img-fluid" alt="votre chaudron">
+					
 				</div>
-			</button>
+			</a>
 			<a href="{{ path('app_login')}}" class="bg-Brown ">
 				<div class="col-md-6 iconMaker"><img src="{{asset('assets/medias/mehProfRec.png')}}" class="img-fluid" alt="votre acount">
 				</div>
