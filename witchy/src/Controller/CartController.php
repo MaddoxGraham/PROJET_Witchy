@@ -122,6 +122,38 @@ class CartController extends AbstractController
 
         return $this->redirectToRoute("app_cart_index");
     }
+    #[Route('/validate', name: 'validate')]
+    public function validate(ProduitRepository $produitRepository, SessionInterface $session, CategorieRepository $categorieRepository): Response
+    {
+
+
+        $surCategories =  $categorieRepository->findBy(['parent' => null]);
+        $SubCategories = $categorieRepository->createQueryBuilder('c')
+        ->where('c.parent IS NOT NULL')
+        ->getQuery()
+        ->getResult();
+
+
+
+        $panier = $session->get("panier", []);
+
+        // On "fabrique" les données
+        $dataPanier = [];
+        $total = 0;
+
+        foreach($panier as $id => $quantite){
+            $product = $produitRepository->find($id);
+            $dataPanier[] = [
+                "produit" => $product,
+                "quantite" => $quantite
+            ];
+            $total += $product->getPrxHt() * $quantite;
+        }
+
+        return $this->render('cart/validate.html.twig', compact("dataPanier","SubCategories","surCategories", "total"));
+    }
+
+
 
 }
 

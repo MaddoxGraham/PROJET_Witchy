@@ -5,13 +5,13 @@
 {% endblock %}
 
 {% block body %}
-	<section class="bg-light p-3">
-		<h1>Votre panier</h1>
+	<section class="topBar bshadow p-3">
+		<div class="font-weight-bold retro-chrome text-light "> <span> Your Cart ⭐ Get your dreamy stuff ⭐ </span> <span> Your Cart ⭐ Get your dreamy stuff ⭐ </span> </div>
 	</section>
 
-	<table class="table text-center">
+	<table class="table text-center mb-2 bshadow">
 		<thead>
-			<tr>
+			<tr class="font-serif txt-White">
 				<th></th>
 				<th>Produit</th>
 				<th>Prix</th>
@@ -23,19 +23,19 @@
 		<tbody class="text-center">
 			{% for element in dataPanier %}
 				<tr>
-					<td>{{dump(element)}}
-					{% for photo in element.produit  %}je suis la
+					<td>
+					{% for photo in element.produit.photos  %}
 						{% if photo.isPrimary == true  %}
 							
-								<img src="{{ photo.src }}" alt="{{ element.produit.shortLibel }}" class="img-fluid ">
+								<img src="{{ photo.src }}" alt="{{ element.produit.shortLibel }}" style="width: auto; height: 200px;" class="img-thumbnail">
 						{% endif %}
 					{% endfor %}</td>
-					<td>{{ element.produit.shortLibel }}</td>
-					<td class="">{{ element.quantite * element.produit.prxHt }}
+					<td class="align-middle">{{ element.produit.shortLibel }}</td>
+					<td class="align-middle">{{ element.quantite * element.produit.prxHt }}
 						€</td>
-					<td>{{ element.quantite }}</td>
+					<td class="align-middle">{{ element.quantite }}</td>
 
-					<td>
+					<td class="align-middle">
 						<a href="{{path("app_cart_add", {id: element.produit.id})}}" class="btn btn-success">
 							<i class="fa-solid fa-circle-plus"></i>
 						</a>
@@ -54,20 +54,21 @@
 			{% endfor %}
 		</tbody>
 		<tfoot>
-			<tr>
-				<td colspan="3">Total</td>
-				<td class="">{{ total }}
-					€</td>
+			<tr class="bg-GradientLight" >
+
+			<td colspan="3" class="font-weight-bold  "><span> Total </span> </td>
+				<td colspan="3" class="font-weight-bold  "> <span> {{ total }}
+					€ </span> </td>
+
+
 				<td>
-					<a href="{{path("app_cart_delete_all")}}" class="text-end">
-						Delete all
-						<i class="fa-solid fa-trash-can"></i>
-					</a>
+<a type="button" href="{{path('app_cart_validate')}}" class="w-50 mt-5 mb-5 btn-AddToCauldron mt-5"> Validate my Cart </a>
 				</td>
 			</tr>
 		</tfoot>
 	</table>
 
+	
 
 	{% include "_partials/_footer.html.twig" %}
 

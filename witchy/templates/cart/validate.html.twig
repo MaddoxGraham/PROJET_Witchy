@@ -1,0 +1,39 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+	Your Cart
+{% endblock %}
+
+{% block body %}
+
+	{% if app.user %}
+		<div class="mb-3 text-center">
+			Well done ! 
+			{{ app.user.prenom }},
+			
+
+            <td colspan="3" class="font-weight-bold  "><span> Total </span> </td>
+				<td colspan="3" class="font-weight-bold  "> <span> {{ total }}
+					€ </span> </td> 
+                    selectionner votre adresse de livraison :
+                  
+                    
+{% for adresse in app.user.adresses %}
+     {% if adresse.nominationAdresse == "Livraison"  %} 
+     {{adresse.adresse }}
+      {{adresse.cp }}
+       {{adresse.ville }}
+     {% endif %}
+{% endfor %}
+                    ajout des adresses confirmer 
+		</div>
+
+        {% else %}
+
+else -> login or register then proceed 
+          {% endif %}
+
+
+	{% include "_partials/_footer.html.twig" %}
+
+{% endblock %}

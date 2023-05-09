@@ -41,6 +41,10 @@
   background-color: var(--mediumBrown) !important;
 }
 
+.bg-GradientLight{
+  background: rgb(255,213,246);
+background: linear-gradient(90deg, rgba(255,213,246,1) 15%, rgba(196,255,253,1) 86%);
+}
 .font-typescript {
   font-family: 'VT323', monospace !important;
 }
@@ -58,6 +62,9 @@
 
 .txt-LightGrey {
   color: var(--lightGreySolid) !important;
+}
+.txt-White{
+  color: white;
 }
 .mt-0{
   margin-top: 0 !important;
@@ -102,7 +109,10 @@ body {
 .relativBox {
   position: relative;
 }
-
+.bg-Darkest{
+  background: rgb(6,14,12);
+  background: radial-gradient(circle, rgb(24, 2, 9) 52%, rgba(0,0,0,1) 100%);
+}
 .blackout {
   background-color: #1a191a81;
   width: 100%;
