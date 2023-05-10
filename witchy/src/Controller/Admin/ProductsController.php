@@ -101,10 +101,6 @@ class ProductsController extends AbstractController{
                 $cpt++;
 
             }   
-
-       
-
-
             //Création du slug 
             $slug = $slugger->slug($product->getShortLibel());
             $product->setSlug($slug);

@@ -126,14 +126,11 @@ class CartController extends AbstractController
     public function validate(ProduitRepository $produitRepository, SessionInterface $session, CategorieRepository $categorieRepository): Response
     {
 
-
         $surCategories =  $categorieRepository->findBy(['parent' => null]);
         $SubCategories = $categorieRepository->createQueryBuilder('c')
         ->where('c.parent IS NOT NULL')
         ->getQuery()
         ->getResult();
-
-
 
         $panier = $session->get("panier", []);
 

@@ -7,33 +7,68 @@
 {% block body %}
 
 	{% if app.user %}
-		<div class="mb-3 text-center">
-			Well done ! 
-			{{ app.user.prenom }},
-			
 
-            <td colspan="3" class="font-weight-bold  "><span> Total </span> </td>
-				<td colspan="3" class="font-weight-bold  "> <span> {{ total }}
-					€ </span> </td> 
-                    selectionner votre adresse de livraison :
+		<section class="container">
+			<div class="row">
+				<div class="col-12 m-3 livraisonBoxes text-center font-serif display-5">
+					<div>  Thanks for your purchase
+					{{ app.user.prenom }}
+					!
+                    </div>
                   
-                    
-{% for adresse in app.user.adresses %}
-     {% if adresse.nominationAdresse == "Livraison"  %} 
-     {{adresse.adresse }}
-      {{adresse.cp }}
-       {{adresse.ville }}
-     {% endif %}
-{% endfor %}
-                    ajout des adresses confirmer 
-		</div>
+					<div class="font-weight-bold  ">
+						<span>
+							Total : {{ total }}	€
+						</span>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-6 m-3 livraisonBoxes">
+					<p>
+						selectionner votre adresse de livraison :
+					</p>
+					<span>
+						{% for adresse in app.user.adresses %}
+							{% if adresse.nominationAdresse == "Livraison"  %}
+								{{adresse.adresse }}
+								{{adresse.cp }}
+								{{adresse.ville }}
+							{% endif %}
+						{% endfor %}
+					</span>
 
-        {% else %}
 
-else -> login or register then proceed 
-          {% endif %}
+				</div>
 
 
-	{% include "_partials/_footer.html.twig" %}
+				<div class="col-5 m-3 livraisonBoxes">
 
-{% endblock %}
+					<p>
+						selectionner votre adresse de Facturation :</p>
+
+					<span>
+						{% for adresse in app.user.adresses %}
+							{% if adresse.nominationAdresse == "Facturation"  %}
+								{{adresse.adresse }}
+								{{adresse.cp }}
+								{{adresse.ville }}
+                                {% else %}
+                                {{adresse.adresse }}
+								{{adresse.cp }}
+								{{adresse.ville }}
+							{% endif %}
+						{% endfor %}
+					</span>
+
+
+				</div>
+			</div>
+
+		</section>
+
+
+	</div>
+	{% else %}else -> login or register then proceed
+{% endif %}
+{% include "_partials/_footer.html.twig" %}{% endblock %}

@@ -60,6 +60,13 @@ background: linear-gradient(90deg, rgba(255,213,246,1) 15%, rgba(196,255,253,1) 
   color: var(--darkBrown) !important;
 }
 
+.livraisonBoxes{
+ padding: 2rem;
+ border-radius: 5px;
+ color: var(--ardoise);
+ background-color: #fffbfb;
+}
+
 .txt-LightGrey {
   color: var(--lightGreySolid) !important;
 }
