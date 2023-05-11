@@ -1,0 +1,21 @@
+<div class="modal fade" id="ajoutAdresse" tabindex="-1" aria-labelledby="ajoutAdresseLabel" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h5 class="modal-title" id="ajoutAdresseLabel">Ajouter une adresse</h5>
+				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+			</div>
+			<div class="modal-body">
+				{{form_start(ajoutAdresseForm)}}
+				{{form_row(ajoutAdresseForm.nomination_adresse)}}
+				{{form_row(ajoutAdresseForm.adresse)}}
+				{{form_row(ajoutAdresseForm.ville)}}
+				{{form_row(ajoutAdresseForm.cp)}}
+			</div>
+			<div class="modal-footer">
+				<button type="submit" class="btn btn-outline-primary">Ajouter l'adresse</button>
+				{{form_end(ajoutAdresseForm)}}
+			</div>
+		</div>
+	</div>
+</div>

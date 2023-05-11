@@ -6,7 +6,14 @@
 
 {% block body %}
 	<section class="topBar bshadow p-3">
-		<div class="font-weight-bold retro-chrome text-light "> <span> Your Cart ⭐ Get your dreamy stuff ⭐ </span> <span> Your Cart ⭐ Get your dreamy stuff ⭐ </span> </div>
+		<div class="font-weight-bold retro-chrome text-light ">
+			<span>
+				Your Cart ⭐ Get your dreamy stuff ⭐
+			</span>
+			<span>
+				Your Cart ⭐ Get your dreamy stuff ⭐
+			</span>
+		</div>
 	</section>
 
 	<table class="table text-center mb-2 bshadow">
@@ -24,12 +31,13 @@
 			{% for element in dataPanier %}
 				<tr>
 					<td>
-					{% for photo in element.produit.photos  %}
-						{% if photo.isPrimary == true  %}
-							
+						{% for photo in element.produit.photos  %}
+							{% if photo.isPrimary == true  %}
+
 								<img src="{{ photo.src }}" alt="{{ element.produit.shortLibel }}" style="width: auto; height: 200px;" class="img-thumbnail">
-						{% endif %}
-					{% endfor %}</td>
+							{% endif %}
+						{% endfor %}
+					</td>
 					<td class="align-middle">{{ element.produit.shortLibel }}</td>
 					<td class="align-middle">{{ element.quantite * element.produit.prxHt }}
 						€</td>
@@ -54,21 +62,31 @@
 			{% endfor %}
 		</tbody>
 		<tfoot>
-			<tr class="bg-GradientLight" >
+		{% if dataPanier != [] %}
+			<tr class="bg-GradientLight">
 
-			<td colspan="3" class="font-weight-bold  "><span> Total </span> </td>
-				<td colspan="3" class="font-weight-bold  "> <span> {{ total }}
-					€ </span> </td>
+				<td colspan="3" class="font-weight-bold  ">
+					<span>
+						Total
+					</span>
+				</td>
+				<td colspan="3" class="font-weight-bold  ">
+					<span>
+						{{ total }}
+						€
+					</span>
+				</td>
 
 
 				<td>
-<a type="button" href="{{path('app_cart_validate')}}" class="w-50 mt-5 mb-5 btn-AddToCauldron mt-5"> Validate my Cart </a>
+					<a type="button" href="{{path('app_cart_validate')}}" class="w-50 mt-5 mb-5 btn-AddToCauldron mt-5">
+						Validate my Cart
+					</a>
 				</td>
-			</tr>
+			</tr>{% endif %}
 		</tfoot>
 	</table>
 
-	
 
 	{% include "_partials/_footer.html.twig" %}
 

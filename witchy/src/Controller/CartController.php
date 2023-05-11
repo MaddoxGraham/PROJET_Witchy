@@ -2,10 +2,22 @@
 
 namespace App\Controller;
 
+use App\Entity\Adresse;
+use App\Entity\Commande;
+use App\Entity\Facture;
+use App\Entity\Historique;
+use App\Entity\Livraison;
 use App\Entity\Produit;
+use App\Form\AjoutAdresseFormType;
+use App\Form\CommandeFormType;
+use App\Repository\AdresseRepository;
 use App\Repository\CategorieRepository;
 use App\Repository\ProduitRepository;
+use DateInterval;
+use DateTimeImmutable;
+use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\Session\SessionInterface;
 use Symfony\Component\Routing\Annotation\Route;
@@ -122,19 +134,15 @@ class CartController extends AbstractController
 
         return $this->redirectToRoute("app_cart_index");
     }
-    #[Route('/validate', name: 'validate')]
-    public function validate(ProduitRepository $produitRepository, SessionInterface $session, CategorieRepository $categorieRepository): Response
+    
+
+    #[Route('/validation', name: 'validate')]
+    public function validation(SessionInterface $session,CategorieRepository $categorieRepository, ProduitRepository $produitRepository, AdresseRepository $adresses, Request $request, EntityManagerInterface $entityManager,): Response
     {
 
-        $surCategories =  $categorieRepository->findBy(['parent' => null]);
-        $SubCategories = $categorieRepository->createQueryBuilder('c')
-        ->where('c.parent IS NOT NULL')
-        ->getQuery()
-        ->getResult();
+        $panier = $session->get('panier', []);
 
-        $panier = $session->get("panier", []);
-
-        // On "fabrique" les données
+        //on "fabrique" les données
         $dataPanier = [];
         $total = 0;
 
@@ -146,11 +154,118 @@ class CartController extends AbstractController
             ];
             $total += $product->getPrxHt() * $quantite;
         }
+        
+        $user = $this->getUser();
+                if ($user == null) {
+           return $this->redirectToRoute("app_login");
+        }else{
 
-        return $this->render('cart/validate.html.twig', compact("dataPanier","SubCategories","surCategories", "total"));
+
+        $userAdresse = $adresses->find(1);
+        $session->set('userAdresse', $userAdresse);
+
+        $commandeForm = $this->createForm(CommandeFormType::class, $user);
+        $commandeForm->handleRequest($request);
+
+        $ajoutAdresseForm = $this->createForm(AjoutAdresseFormType::class);
+        $ajoutAdresseForm->handleRequest($request);
+
+        // Rajout d'une adresse
+
+        $adresse = new Adresse();
+
+        if ($ajoutAdresseForm->isSubmitted()) {
+            $data = $ajoutAdresseForm->getData();
+            
+            $adresse->setIdClient($user);
+            $adresse->setNominationAdresse($data->getNominationAdresse());
+            $adresse->setAdresse($data->getAdresse());
+            $adresse->setVille($data->getVille());
+            $adresse->setCp($data->getCp());
+            $adresse->setActif(true);
+            $entityManager->persist($adresse);
+            $entityManager->flush();
+        }
+        
+        //création d'une nouvelle commande
+        $commande = new Commande();
+        $facture = new Facture();
+        $historique = new Historique();
+        $livraison = new Livraison();
+        $date = new DateTimeImmutable();
+        $datepro = $date->add(new DateInterval('P30D'));
+ 
+        if($commandeForm->isSubmitted()) {
+           
+            $adresseLivraison = $commandeForm->get('nomination_adresse')->getData();
+            $adresseFacturation = $commandeForm->get('nomination_adresse2')->getData();
+            $moyenPaiement = $commandeForm->get('moyen_paiement')->getData();
+
+            
+            $commande->setClient($user);
+            $commande->setTotalTtc($total);
+            $commande->setStatut('terminé');
+            $commande->setDateCom($date);
+            $entityManager->persist($commande);
+            $facture->setIdCom($commande);
+            $facture->setIdAdresse($adresseFacturation);
+            if($user->getRaisonSociale() == null){
+                $facture->setDelaiPaiement(0);
+                $facture->setModePaiement('cb');
+                $facture->setDatePaiement($date);
+            } else{
+                $facture->setDelaiPaiement(90);
+                $facture->setModePaiement($moyenPaiement);
+                $facture->setDatePaiement($datepro);
+            }
+            $entityManager->persist($facture);
+            
+            $livraison->setIdCom($commande);
+            $livraison->setDateLivraison($datepro);
+            $entityManager->persist($livraison);
+            
+            $historique->setIdClient($user);
+            $historique->setIdCom($commande);
+            $historique->setNomHistorique($user->getNom());
+            $historique->setPrenomHistorique($user->getPrenom());
+            $historique->setMailHistorique($user->getEmail());
+            $historique->setTelephoneHistorique($user->getTelephone());
+            if($user->getRaisonSociale() == null){
+                $historique->setRaisonSocialeHistorique(null);
+            } else{
+                $historique->setRaisonSocialeHistorique($user->getRaisonSociale());
+            }
+            
+            $entityManager->persist($historique);
+            $entityManager->flush();
+
+            $panier = $session->set('panier', []);      
+        return $this->redirectToRoute("witchy_index");
+        }
+
+        $surCategories =  $categorieRepository->findBy(['parent' => null]);
+            $SubCategories = $categorieRepository->createQueryBuilder('c')
+            ->where('c.parent IS NOT NULL')
+            ->getQuery()
+            ->getResult();
+
+
+        return $this->render(
+            'cart/validate.html.twig',
+            [
+                'dataPanier' => $dataPanier,
+                'total' => $total,
+                'user' => $user,
+                'produits' => $produitRepository,
+                'adresse' => $userAdresse,
+                'commandeForm' => $commandeForm->createView(),
+                'ajoutAdresseForm' => $ajoutAdresseForm->createView(),
+                'surCategories'=>$surCategories,
+                'SubCategories'=>$SubCategories,
+                
+            ]
+        );        }
     }
-
-
 
 }
 

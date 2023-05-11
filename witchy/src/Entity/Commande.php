@@ -28,6 +28,9 @@ class Commande
     #[ORM\Column(length: 255)]
     private ?string $statut = null;
 
+    #[ORM\Column(type: Types::DATETIME_MUTABLE, nullable: true)]
+    private ?\DateTimeInterface $dateCom = null;
+
     #[ORM\ManyToOne(inversedBy: 'commandes')]
     private ?Client $client = null;
 
@@ -102,6 +105,18 @@ class Commande
     public function setClient(?Client $client): self
     {
         $this->client = $client;
+
+        return $this;
+    }
+
+    public function getDateCom(): ?\DateTimeInterface
+    {
+        return $this->dateCom;
+    }
+
+    public function setDateCom(?\DateTimeInterface $dateCom): self
+    {
+        $this->dateCom = $dateCom;
 
         return $this;
     }
@@ -189,7 +204,7 @@ class Commande
         if ($this->factures->removeElement($facture)) {
             // set the owning side to null (unless already changed)
             if ($facture->getIdCom() === $this) {
-                $facture->setIdCom(null);
+                $facture->setIdCom($this);
             }
         }
 

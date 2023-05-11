@@ -57,7 +57,7 @@
 				<div class="mt-4 txt-LightGrey text-justify description font-serif mb-5 ">
 					{{ produit.longLibel }}
 				</div>
-				<button type="button" class=" btn-AddToCauldron mt-5">Add to Cauldron</button>
+				<a href="{{ path('app_cart_add', {'id':produit.id}) }}" type="button" class="btn-AddToCauldron mt-5 text-center card-text LargeFont">Add to cauldron</a>
 			</div>
 
 		</div>
@@ -87,7 +87,7 @@
 
 								{% endif %}
 							</a>
-							<button type="button" class="card-text LargeFont">Add to cauldron</button>
+						<a href="{{ path('app_cart_add', {'id':produit.id}) }}" type="button" class="card-text LargeFont">Add to cauldron</a>
 							{% if prodCat.photos|length > 1 %}
 								{% set secondaryPhotos = prodCat.photos|filter(p => p.isPrimary is null) %}
 								{% for photo in secondaryPhotos %}

@@ -25,7 +25,7 @@
 							{% endfor %}
 
 						</a>
-						<button type="button" class="card-text LargeFont">Add to cauldron</button>
+						<a href="{{ path('app_cart_add', {'id':produit.id}) }}" type="button" class="card-text LargeFont">Add to cauldron</a>
 					</div>
 					<div class="card-body">
 						<div class="font-serif">{{ produit.shortLibel }}</div>

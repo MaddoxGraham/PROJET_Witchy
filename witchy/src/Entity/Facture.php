@@ -2,80 +2,106 @@
 
 namespace App\Entity;
 
-use App\Repository\FactureRepository;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
+use ApiPlatform\Metadata\ApiResource;
+use App\Repository\FactureRepository;
+use Symfony\Component\Serializer\Annotation\Groups;
 
 #[ORM\Entity(repositoryClass: FactureRepository::class)]
+// #[ApiResource(normalizationContext: [
+//     'groups' => ['factures:read'],
+// ])]
 class Facture
 {
     #[ORM\Id]
     #[ORM\GeneratedValue]
     #[ORM\Column]
+    #[Groups(['factures:read'])]
     private ?int $id = null;
 
-    #[ORM\Column(type: Types::DATETIME_MUTABLE)]
-    private ?\DateTimeInterface $delaisPayement = null;
+    #[ORM\Column]
+    #[Groups(['factures:read'])]
+    private ?int $delaiPaiement = null;
 
     #[ORM\Column(length: 255)]
-    private ?string $modePayement = null;
+    #[Groups(['factures:read'])]
+    private ?string $modePaiement = null;
 
-    #[ORM\Column(type: Types::DATETIME_MUTABLE, nullable: true)]
-    private ?\DateTimeInterface $datePayement = null;
+    #[ORM\Column(type: Types::DATE_MUTABLE)]
+    #[Groups(['factures:read'])]
+    private ?\DateTimeInterface $datePaiement = null;
 
-    #[ORM\ManyToOne(inversedBy: 'factures')]
+    #[ORM\OneToOne(cascade: ['persist', 'remove'])]
     #[ORM\JoinColumn(nullable: false)]
-    private ?Commande $idCom = null;
+
+    private ?commande $idCom = null;
+
+    #[ORM\ManyToOne]
+    #[ORM\JoinColumn(nullable: false)]
+    private ?adresse $idAdresse = null;
 
     public function getId(): ?int
     {
         return $this->id;
     }
 
-    public function getDelaisPayement(): ?\DateTimeInterface
+    public function getDelaiPaiement(): ?int
     {
-        return $this->delaisPayement;
+        return $this->delaiPaiement;
     }
 
-    public function setDelaisPayement(\DateTimeInterface $delaisPayement): self
+    public function setDelaiPaiement(int $delaiPaiement): self
     {
-        $this->delaisPayement = $delaisPayement;
+        $this->delaiPaiement = $delaiPaiement;
 
         return $this;
     }
 
-    public function getModePayement(): ?string
+    public function getModePaiement(): ?string
     {
-        return $this->modePayement;
+        return $this->modePaiement;
     }
 
-    public function setModePayement(string $modePayement): self
+    public function setModePaiement(string $modePaiement): self
     {
-        $this->modePayement = $modePayement;
+        $this->modePaiement = $modePaiement;
 
         return $this;
     }
 
-    public function getDatePayement(): ?\DateTimeInterface
+    public function getDatePaiement(): ?\DateTimeInterface
     {
-        return $this->datePayement;
+        return $this->datePaiement;
     }
 
-    public function setDatePayement(?\DateTimeInterface $datePayement): self
+    public function setDatePaiement(\DateTimeInterface $datePaiement): self
     {
-        $this->datePayement = $datePayement;
+        $this->datePaiement = $datePaiement;
 
         return $this;
     }
 
-    public function getIdCom(): ?Commande
+    public function getIdCom(): ?commande
     {
         return $this->idCom;
     }
 
-    public function setIdCom(?Commande $idCom): self
+    public function setIdCom(commande $idCom): self
     {
         $this->idCom = $idCom;
+
+        return $this;
+    }
+
+    public function getIdAdresse(): ?adresse
+    {
+        return $this->idAdresse;
+    }
+
+    public function setIdAdresse(?adresse $idAdresse): self
+    {
+        $this->idAdresse = $idAdresse;
 
         return $this;
     }

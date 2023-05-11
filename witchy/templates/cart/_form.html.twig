@@ -1,0 +1,35 @@
+{{form_start(commandeForm)}}
+					{{form_row(commandeForm.nomination_adresse)}}
+
+
+					{{form_row(commandeForm.nomination_adresse2)}}
+					<a href="#" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#ajoutAdresse">Ajouter une adresse</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="col-sm-6 my-2">
+	<div class="card h-100 my-2">
+		<div class="card-body">
+			<h5 class="card-title">Mode de paiement</h5>
+			{% if user.raisonSociale == null %}
+				<div class="d-flex flex-column flex-nowrap">
+					<div class="row ps-3">
+						<p class="col-6">paiement par carte:</p>
+						<a href="" type="button" class="btn btn-outline-primary col-4">
+							API paiement</a>
+					</div>
+				</div>
+			{% else %}
+				{{form_row(commandeForm.moyen_paiement)}}
+			{% endif %}
+		</div>
+	</div>
+</div>
+<div class="col-12 mb-5 mt-3">
+	<div class="col col-2 mx-auto">
+		<button type="submit" class="btn btn-outline-primary">Commander</button>
+		{{form_end(commandeForm, {'render_rest': false})}}
+	</div>
+</div>
