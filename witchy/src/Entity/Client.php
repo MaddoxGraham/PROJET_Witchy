@@ -58,11 +58,19 @@ class Client implements UserInterface, PasswordAuthenticatedUserInterface
     #[ORM\OneToMany(mappedBy: 'idClient', targetEntity: Historique::class, orphanRemoval: true)]
     private Collection $historiques;
 
+    #[ORM\OneToMany(mappedBy: 'client', targetEntity: Comments::class, orphanRemoval: true)]
+    private Collection $comments;
+
+ 
+
+
+
     public function __construct()
     {
         $this->adresses = new ArrayCollection();
         $this->historiques = new ArrayCollection();
         $this->created_at = new \DateTimeImmutable();
+        $this->comments = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -268,4 +276,35 @@ class Client implements UserInterface, PasswordAuthenticatedUserInterface
 
         return $this;
     }
+
+    /**
+     * @return Collection<int, Comments>
+     */
+    public function getComments(): Collection
+    {
+        return $this->comments;
+    }
+
+    public function addComment(Comments $comment): self
+    {
+        if (!$this->comments->contains($comment)) {
+            $this->comments->add($comment);
+            $comment->setClient($this);
+        }
+
+        return $this;
+    }
+
+    public function removeComment(Comments $comment): self
+    {
+        if ($this->comments->removeElement($comment)) {
+            // set the owning side to null (unless already changed)
+            if ($comment->getClient() === $this) {
+                $comment->setClient(null);
+            }
+        }
+
+        return $this;
+    }
+
 }
