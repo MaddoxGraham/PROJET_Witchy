@@ -2,6 +2,7 @@
 
 namespace App\Entity;
 
+use ApiPlatform\Metadata\ApiResource;
 use App\Entity\Trait\CreatedAtTrait;
 use App\Repository\ClientRepository;
 use Doctrine\Common\Collections\ArrayCollection;
@@ -10,39 +11,51 @@ use Doctrine\ORM\Mapping as ORM;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface;
 use Symfony\Component\Security\Core\User\UserInterface;
+use Symfony\Component\Serializer\Annotation\Groups;
 
 #[ORM\Entity(repositoryClass: ClientRepository::class)]
 #[UniqueEntity(fields: ['email'], message: 'There is already an account with this email')]
+#[ApiResource(normalizationContext: [
+    'groups' => ['clients:read'],
+])]
 class Client implements UserInterface, PasswordAuthenticatedUserInterface
 {
     use CreatedAtTrait;
     #[ORM\Id]
     #[ORM\GeneratedValue]
     #[ORM\Column]
+    #[Groups(['clients:read'])]
     private ?int $id = null;
 
     #[ORM\Column(length: 180, unique: true)]
+    #[Groups(['clients:read'])]
     private ?string $email = null;
 
     #[ORM\Column]
+    #[Groups(['clients:read'])]
     private array $roles = [];
 
     /**
      * @var string The hashed password
      */
     #[ORM\Column]
+    #[Groups(['clients:read'])]
     private ?string $password = null;
 
     #[ORM\Column(length: 255)]
+    #[Groups(['clients:read'])]
     private ?string $nom = null;
 
     #[ORM\Column(length: 255)]
+    #[Groups(['clients:read'])]
     private ?string $prenom = null;
 
     #[ORM\Column(length: 10, nullable: true)]
+    #[Groups(['clients:read'])]
     private ?string $telephone = null;
 
     #[ORM\Column(length: 255, nullable: true)]
+    #[Groups(['clients:read'])]
     private ?string $raisonSociale = null;
 
     #[ORM\OneToMany(mappedBy: 'idClient', targetEntity: Adresse::class)]
@@ -58,19 +71,13 @@ class Client implements UserInterface, PasswordAuthenticatedUserInterface
     #[ORM\OneToMany(mappedBy: 'idClient', targetEntity: Historique::class, orphanRemoval: true)]
     private Collection $historiques;
 
-    #[ORM\OneToMany(mappedBy: 'client', targetEntity: Comments::class, orphanRemoval: true)]
-    private Collection $comments;
-
- 
-
-
 
     public function __construct()
     {
         $this->adresses = new ArrayCollection();
         $this->historiques = new ArrayCollection();
         $this->created_at = new \DateTimeImmutable();
-        $this->comments = new ArrayCollection();
+
     }
 
     public function getId(): ?int
@@ -277,34 +284,6 @@ class Client implements UserInterface, PasswordAuthenticatedUserInterface
         return $this;
     }
 
-    /**
-     * @return Collection<int, Comments>
-     */
-    public function getComments(): Collection
-    {
-        return $this->comments;
-    }
 
-    public function addComment(Comments $comment): self
-    {
-        if (!$this->comments->contains($comment)) {
-            $this->comments->add($comment);
-            $comment->setClient($this);
-        }
-
-        return $this;
-    }
-
-    public function removeComment(Comments $comment): self
-    {
-        if ($this->comments->removeElement($comment)) {
-            // set the owning side to null (unless already changed)
-            if ($comment->getClient() === $this) {
-                $comment->setClient(null);
-            }
-        }
-
-        return $this;
-    }
 
 }

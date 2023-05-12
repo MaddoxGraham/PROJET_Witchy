@@ -48,8 +48,6 @@ class Produit
     #[ORM\JoinColumn(nullable: false)]
     private ?Categorie $categorie = null;
 
-    #[ORM\OneToMany(mappedBy: 'produit', targetEntity: Comments::class, orphanRemoval: true)]
-    private Collection $comments;
 
     public function __construct()
     {
@@ -57,7 +55,6 @@ class Produit
         $this->ligneCommandes = new ArrayCollection();
         $this->listes = new ArrayCollection();
         $this->stocks = new ArrayCollection();
-        $this->comments = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -246,35 +243,9 @@ class Produit
         return $this;
     }
 
-    /**
-     * @return Collection<int, Comments>
-     */
-    public function getComments(): Collection
-    {
-        return $this->comments;
-    }
 
-    public function addComment(Comments $comment): self
-    {
-        if (!$this->comments->contains($comment)) {
-            $this->comments->add($comment);
-            $comment->setProduit($this);
-        }
 
-        return $this;
-    }
-
-    public function removeComment(Comments $comment): self
-    {
-        if ($this->comments->removeElement($comment)) {
-            // set the owning side to null (unless already changed)
-            if ($comment->getProduit() === $this) {
-                $comment->setProduit(null);
-            }
-        }
-
-        return $this;
-    }
+   
 
 
 
