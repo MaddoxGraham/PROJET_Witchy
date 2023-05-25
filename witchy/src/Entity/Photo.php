@@ -2,22 +2,30 @@
 
 namespace App\Entity;
 
+use ApiPlatform\Metadata\ApiResource;
 use App\Repository\PhotoRepository;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Serializer\Annotation\Groups;
 
+#[ApiResource(normalizationContext: [
+    'groups' => ['photos:read'],
+])]
 #[ORM\Entity(repositoryClass: PhotoRepository::class)]
 class Photo
 {
     #[ORM\Id]
     #[ORM\GeneratedValue]
     #[ORM\Column]
+    #[Groups(['photos:read'])]
     private ?int $id = null;
 
     #[ORM\Column(type: Types::TEXT)]
+    #[Groups(['photos:read'])]
     private ?string $src = null;
 
     #[ORM\Column]
+    #[Groups(['photos:read'])]
     private ?bool $isprimary = null;
 
     #[ORM\ManyToOne(inversedBy: 'photos')]

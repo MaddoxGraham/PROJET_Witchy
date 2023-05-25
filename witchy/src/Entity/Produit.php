@@ -2,13 +2,18 @@
 
 namespace App\Entity;
 
+use ApiPlatform\Metadata\ApiResource;
 use App\Entity\Trait\SlugTrait;
 use App\Repository\ProduitRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Serializer\Annotation\Groups;
 
+#[ApiResource(normalizationContext: [
+    'groups' => ['produits:read'],
+])]
 #[ORM\Entity(repositoryClass: ProduitRepository::class)]
 class Produit
 {
@@ -17,22 +22,28 @@ class Produit
     #[ORM\Id]
     #[ORM\GeneratedValue]
     #[ORM\Column]
+    #[Groups(['produits:read'])]
     private ?int $id = null;
 
     #[ORM\Column(length: 255)]
+    #[Groups(['produits:read'])]
     private ?string $ShortLibel = null;
 
     #[ORM\Column(type: Types::TEXT, nullable: true)]
+    #[Groups(['produits:read'])]
     private ?string $LongLibel = null;
 
     #[ORM\Column(type: Types::DECIMAL, precision: 8, scale: 2, nullable: true)]
+    #[Groups(['produits:read'])]
     private ?string $prxHt = null;
 
     #[ORM\Column(length: 255)]
+    #[Groups(['produits:read'])]
     private ?string $slug = null;
 
     #[ORM\OneToMany(mappedBy: 'RefProduit', targetEntity: Photo::class,
     orphanRemoval: true, cascade:['persist'])]
+    #[Groups(['produits:read'])]
     private Collection $photos;
 
     #[ORM\OneToMany(mappedBy: 'RefProduit', targetEntity: LigneCommande::class, orphanRemoval: true)]
@@ -46,6 +57,7 @@ class Produit
 
     #[ORM\ManyToOne(inversedBy: 'produits')]
     #[ORM\JoinColumn(nullable: false)]
+    #[Groups(['produits:read'])]
     private ?Categorie $categorie = null;
 
 
