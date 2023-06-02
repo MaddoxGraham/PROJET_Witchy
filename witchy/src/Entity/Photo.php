@@ -29,6 +29,7 @@ class Photo
     private ?bool $isprimary = null;
 
     #[ORM\ManyToOne(inversedBy: 'photos')]
+    #[Groups(['photos:read'])]
     #[ORM\JoinColumn(nullable: false)]
     private ?Produit $RefProduit = null;
 
