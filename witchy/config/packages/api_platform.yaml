@@ -1,0 +1,6 @@
+api_platform:
+  formats:
+    json: ['application/json']
+    html: ['text/html']
+  defaults:
+    pagination_enabled: false
