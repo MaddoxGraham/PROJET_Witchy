@@ -2,6 +2,7 @@
 
 namespace App\Entity;
 
+use ApiPlatform\Metadata\ApiFilter;
 use ApiPlatform\Metadata\ApiResource;
 use App\Entity\Trait\SlugTrait;
 use App\Repository\ProduitRepository;
@@ -10,11 +11,13 @@ use Doctrine\Common\Collections\Collection;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Serializer\Annotation\Groups;
+use ApiPlatform\Core\Annotation\ApiSubresource;
 
 #[ApiResource(normalizationContext: [
     'groups' => ['produits:read'],
 ])]
 #[ORM\Entity(repositoryClass: ProduitRepository::class)]
+#[ApiFilter(SearchFilter::class, properties: ['categorie' => 'exact'])]
 class Produit
 {
     use SlugTrait;
@@ -44,6 +47,7 @@ class Produit
     #[ORM\OneToMany(mappedBy: 'RefProduit', targetEntity: Photo::class,
     orphanRemoval: true, cascade:['persist'])]
     #[Groups(['produits:read'])]
+
     private Collection $photos;
 
     #[ORM\OneToMany(mappedBy: 'RefProduit', targetEntity: LigneCommande::class, orphanRemoval: true)]
@@ -58,6 +62,7 @@ class Produit
     #[ORM\ManyToOne(inversedBy: 'produits')]
     #[ORM\JoinColumn(nullable: false)]
     #[Groups(['produits:read'])]
+    
     private ?Categorie $categorie = null;
 
 
