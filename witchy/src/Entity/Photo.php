@@ -2,12 +2,17 @@
 
 namespace App\Entity;
 
+use ApiPlatform\Doctrine\Orm\Filter\BooleanFilter;
+use ApiPlatform\Doctrine\Orm\Filter\SearchFilter;
+use ApiPlatform\Metadata\ApiFilter;
 use ApiPlatform\Metadata\ApiResource;
 use App\Repository\PhotoRepository;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Serializer\Annotation\Groups;
 
+#[ApiFilter (SearchFilter::class, properties: ['RefProduit' => 'exact'])]
+#[ApiFilter(BooleanFilter::class, properties: ['majorPicture'])]
 #[ApiResource(normalizationContext: [
     'groups' => ['photos:read'],
 ])]
@@ -31,6 +36,7 @@ class Photo
     #[ORM\ManyToOne(inversedBy: 'photos')]
     #[Groups(['photos:read'])]
     #[ORM\JoinColumn(nullable: false)]
+    #[Groups(['photos:read'])]
     private ?Produit $RefProduit = null;
 
     public function getId(): ?int
