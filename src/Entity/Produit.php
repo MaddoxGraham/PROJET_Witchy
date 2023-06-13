@@ -11,13 +11,14 @@ use Doctrine\Common\Collections\Collection;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Serializer\Annotation\Groups;
-use ApiPlatform\Core\Annotation\ApiSubresource;
+use ApiPlatform\Doctrine\Orm\Filter\SearchFilter;
 
 #[ApiResource(normalizationContext: [
     'groups' => ['produits:read'],
 ])]
 #[ORM\Entity(repositoryClass: ProduitRepository::class)]
 #[ApiFilter(SearchFilter::class, properties: ['categorie' => 'exact'])]
+#[ApiFilter(SearchFilter::class, properties: ['id' => 'exact'])]
 class Produit
 {
     use SlugTrait;
