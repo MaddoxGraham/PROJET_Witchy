@@ -6,7 +6,8 @@ Witchy is an online shop that offers alternative/cyberpunk clothing. The product
 
 One of the most important page of the shop is the landing page. It show directly the atmosphere and the concept wanted for the shop. 
 
- [images](https://github.com/MaddoxGraham/PROJET_Witchy/blob/main/public/assets/medias/Capture%20d%E2%80%99%C3%A9cran%20du%202023-07-18%2012-15-10.png)
+<img src="https://raw.githubusercontent.com/MaddoxGraham/PROJET_Witchy/main/public/assets/medias/Capture%20d%E2%80%99%C3%A9cran%20du%202023-07-18%2012-15-10.png" alt="landingpage Witchy">
+
 
 we can see a dark and cyberpunk front page. The name and motto of the shop are visible and the navigation seems intuitive. 
 If the user choose directly to consult the categories  here is the display : 
